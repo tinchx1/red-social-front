@@ -1,0 +1,164 @@
+
+.profileContainer {
+  position: relative;
+  font-family: $font-roboto;
+}
+.superAdminBorder {
+  border-left: 1.75px solid $blue-500;
+  padding-left: 8px;
+
+  @media (max-width: 768px) {
+    border-left: none;
+  }
+}
+.profileButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+.profileIcon {
+  color: $white-50;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 998;
+}
+
+.modal {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: $white-50;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  width: 280px;
+  z-index: 999;
+  border: 1px solid $white-500;
+
+  @media (max-width: 768px) {
+    right: -50px;
+    width: 320px;
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.avatarContainer {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.userDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 400;
+  color: $black;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+  color: $black-200;
+}
+
+.userOrganization {
+  font-size: 11px;
+  font-weight: 400;
+  color: $white-700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: $dark-blue;
+  margin: 0 0 12px 0;
+  padding-left: 12px;
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menuItem {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: $white-900;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $white-200;
+    color: $black;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: $white-400;
+  margin: 12px 0;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: $dark-blue;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  width: 100%;
+
+  &:hover {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+  }
+}

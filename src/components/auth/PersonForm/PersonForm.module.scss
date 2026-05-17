@@ -1,0 +1,317 @@
+.formContainer {
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 48px;
+  width: auto;
+  min-width: 748px;
+  max-width: 1189px;
+  min-height: 700px;
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 769px) {
+  .formContainer {
+    height: auto;
+  }
+
+  .form {
+    padding-bottom: 96px;
+  }
+
+  .buttonContainer {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 0;
+  }
+}
+
+.title {
+  font-family: $font-epilogue;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1f2937;
+  text-align: center;
+  margin: 0 0 24px 0;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-family: $font-roboto;
+  font-size: 18px;
+  color: $gray-light;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+}
+
+.formField {
+  margin-bottom: 32px;
+}
+
+.formFieldsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNameSection {
+  display: none;
+  flex-direction: column;
+}
+
+.formFieldsRow {
+  display: flex;
+}
+
+.leftColumn,
+.rightColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftColumn .formField,
+.rightColumn .formField {
+  margin-bottom: 24px;
+}
+
+.sectorSection {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.sectorTitle {
+  font-family: $font-roboto;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1f2937;
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.desktopControls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 32px;
+}
+
+.mobileControls {
+  display: none;
+  gap: 12px;
+  width: 100%;
+}
+
+.mobileControls button {
+  flex: 1;
+}
+
+.progressIndicatorMobile {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .formFieldsRow {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftColumn,
+  .rightColumn {
+    gap: 8px;
+  }
+
+  .formContainer {
+    min-width: auto;
+    max-width: auto;
+    min-height: 571px;
+    padding: 32px 24px;
+    margin: 20px auto;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .mobileNameSection {
+    display: flex;
+  }
+
+  .formFieldsRow {
+    flex-direction: column;
+  }
+
+  .leftColumn .formField,
+  .rightColumn .formField {
+    margin-bottom: 20px;
+  }
+
+  .desktopControls {
+    display: none;
+  }
+
+  .mobileControls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttonContainer {
+    justify-content: center;
+  }
+}
+
+// General error message styles
+.generalError {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+
+  p {
+    color: #dc2626;
+    font-family: $font-roboto;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// General success message styles
+.generalSuccess {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+
+  p {
+    color: #047857;
+    font-family: $font-roboto;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// Google info message styles
+.googleInfo {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+
+  p {
+    color: #1d4ed8;
+    font-family: $font-roboto;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// Visibility helpers
+.desktopOnly {
+  display: none;
+}
+
+.mobileOnly {
+  display: block;
+}
+
+.progressIndicatorMobile {
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .desktopOnly {
+    display: block;
+  }
+  .mobileOnly {
+    display: none;
+  }
+  .progressIndicatorMobile {
+    display: none;
+  }
+}
+
+// Checkbox styles
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-family: $font-roboto;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+  margin: 0;
+}
+
+.checkbox {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  cursor: pointer;
+  accent-color: $blue-500;
+  flex-shrink: 0;
+}
+
+.checkboxText {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.checkboxError {
+  display: block;
+  color: #dc2626;
+  font-size: 12px;
+  font-family: $font-roboto;
+  margin-top: 4px;
+  margin-left: 30px;
+}
+
+.link {
+  color: $blue-500;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $blue-600;
+  }
+}

@@ -1,0 +1,166 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+  gap: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: $font-roboto;
+
+  @media (max-width: 1600px) {
+    max-width: 100%;
+    grid-template-columns: 1fr 600px 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  @media (max-width: 1400px) {
+    max-width: 600px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    max-width: 600px;
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+.leftSidebar {
+  grid-column: 1;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  justify-self: end;
+  width: 357px;
+
+  // Make the profile take remaining space next to the volver button
+  & > *:first-child {
+    flex: 0 0 auto; // volver button
+  }
+  & > *:nth-child(2) {
+    flex: 1 1 auto; // profile
+    min-width: 0;
+  }
+
+  @media (max-width: 1400px) {
+    grid-column: 1;
+    grid-row: 1;
+    height: auto;
+    position: relative;
+    top: 0;
+    display: block;
+    justify-self: stretch;
+    width: auto;
+  }
+
+  @media (max-width: 900px) {
+    grid-column: 1;
+    grid-row: 1;
+    height: auto;
+    position: relative;
+    top: 0;
+    display: block;
+    justify-self: stretch;
+    width: auto;
+  }
+}
+
+.mainContent {
+  grid-column: 2;
+  .feedContainer {
+    .postsContainer {
+      .postsTitle {
+        display: block;
+        font-size: 14px;
+        color: $white-800;
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+
+      .adTitle {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: #666;
+        margin: 16px 0 8px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .adImageContainer {
+        margin: 8px 0 24px 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        .adImage {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+
+      .noPosts {
+        text-align: center;
+        padding: 48px 24px;
+        color: #666;
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  @media (max-width: 900px) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+.rightSidebar {
+  grid-column: 3;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  justify-self: start;
+  width: 424px;
+
+  @media (max-width: 1400px) {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: stretch;
+    width: auto;
+  }
+
+  @media (max-width: 900px) {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: stretch;
+    width: auto;
+  }
+}
+
+.volverButton {
+  display: block;
+  @media (max-width: 1600px) {
+    display: none;
+  }
+}
+
+.hideTablet {
+  display: block;
+  @media (max-width: 1400px) {
+    display: none;
+  }
+}

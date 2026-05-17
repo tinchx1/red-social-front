@@ -1,0 +1,14 @@
+.container {
+  // background-color: red;
+  font-family: $font-roboto;
+  padding-inline: 24px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $dark-blue;
+  font-size: 22px;
+  margin-bottom: 1rem;
+}

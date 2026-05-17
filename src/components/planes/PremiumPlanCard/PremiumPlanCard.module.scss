@@ -1,0 +1,155 @@
+.card {
+  background: $blue-500;
+  border-radius: 34.25px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  max-width: 440px;
+  @media (max-width: 768px) {
+    max-width: 372px;
+    width: 100%;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $blue-400;
+}
+
+.title {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  color: $white-50;
+  margin: 0;
+  text-transform: capitalize;
+}
+.beforePrice {
+  color: $white-50;
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+.beforePriceValue {
+  text-decoration: line-through;
+}
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.titleDescription {
+  width: 126;
+  border-radius: 100px;
+  opacity: 1;
+  gap: 9.68px;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  background-color: $blue-700;
+  color: $white-50;
+}
+.price {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 40.46px;
+  line-height: 1;
+  font-style: Bold;
+  color: $white-50;
+  margin: 0;
+}
+
+.month {
+  font-family: $font-roboto;
+  font-weight: 500;
+  font-size: 13.38px;
+  line-height: 1;
+  color: $white-50;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.feature {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.checkIcon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: $white-50;
+}
+
+.xIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: $black;
+}
+
+.featureName {
+  font-family: $font-roboto;
+  font-weight: 600;
+  font-size: 18px;
+  color: $white-50;
+  line-height: 1.2;
+}
+
+.subscribeButton {
+  height: 53px;
+  width: 100%;
+  margin-top: auto;
+  background: $white-50;
+  color: $blue-500;
+  border-color: $white-50;
+  font-weight: 600;
+  font-size: 22px;
+  &:hover {
+    background-color: $white-50 !important;
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+  }
+  &:disabled {
+    background-color: $blue-100 !important;
+    color: $blue-400 !important;
+    border-color: $blue-100 !important;
+  }
+}

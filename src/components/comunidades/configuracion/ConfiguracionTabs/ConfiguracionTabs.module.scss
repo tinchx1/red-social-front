@@ -1,0 +1,125 @@
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  overflow-x: auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  align-self: end;
+  @media (max-width: 1199px) {
+    gap: 4px;
+  }
+}
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+}
+.titleContainerCommunity {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.title {
+  font-family: Epilogue;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 27px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: black;
+}
+.mobileTab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background: $blue-50;
+  color: $title-dark;
+  font-weight: 600;
+  text-wrap: nowrap;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+  border: none;
+
+  &:hover {
+    background: $blue-100;
+  }
+
+  @media (max-width: 460px) {
+    padding: 12px;
+    font-size: 12px;
+  }
+  @media (max-width: 410px) {
+    padding: 10px;
+    font-size: 11px;
+  }
+  @media (max-width: 372px) {
+    padding: 9px;
+    font-size: 10px;
+  }
+}
+
+.mobileTabActive {
+  background: $blue-500;
+  color: $white-50;
+
+  &:hover {
+    background: $blue-600;
+  }
+}
+
+.tabsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 110px;
+  align-self: end;
+  @media (max-width: 1200px) {
+    height: auto;
+  }
+}
+.titleCommunityName {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #000000;
+}
+.hideInMobile {
+  display: none;
+  @media (min-width: 1200px) {
+    display: flex;
+  }
+}
+.hideInDesktop {
+  display: flex;
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+.communityLogo {
+  margin-left: 32px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}

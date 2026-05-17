@@ -1,0 +1,199 @@
+.publicacionesContainer {
+  background: $white-50;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: $black-100;
+    margin: 0;
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+// Simple Post Card Styles
+.simplePostCard {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  min-width: 0; // prevent grid overflow from long content
+}
+
+.postHeader {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logoSection {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-auto-rows: auto;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-width: 40px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+  }
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.logoIcon {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.organizationName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.3;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 400;
+  white-space: nowrap;
+  margin-left: 0;
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: -8px;
+}
+
+.postContent {
+  margin-bottom: 16px;
+  min-width: 0;
+}
+
+.postText {
+  line-height: 1.5;
+  color: #374151;
+  margin: 0;
+  white-space: pre-wrap; // preserve newlines like PostCard
+  overflow-wrap: anywhere; // wrap long strings without spaces
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.readMore {
+  color: $blue-500;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.postImage {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imageContent {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain; // match PostCard behavior so large images don't stretch grid
+  display: block;
+  background-color: $white-200;
+}
+
+.imageWatermark {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+// Shared post embed (match PostCard shared layout semantics)
+.sharedContainer {
+  border: 1px solid $white-400;
+  background: $white-50;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.sharedHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}

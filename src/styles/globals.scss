@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  min-width: 304px;
+}
+
+body {
+  min-height: 100dvh;
+  min-width: 304px;
+  max-width: 100dvw;
+  overflow-x: hidden;
+  background-color: $white-100;
+  font-family: $font-roboto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select,
+option,
+label {
+  font-family: inherit;
+}
+
+.container {
+  display: block;
+  max-width: 1582px;
+  width: 90%;
+}
+
+/* Utility: prevent long unbroken text from overflowing containers */
+.u-wrap-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Apply text wrapping to all text elements globally */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button,
+label,
+td,
+th {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.container-padding {
+  margin-top: 25px !important;
+}

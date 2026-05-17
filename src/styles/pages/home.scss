@@ -1,0 +1,33 @@
+.homepage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white-100;
+  height: 100dvh;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-family: $font-epilogue;
+    font-size: 55px;
+    font-weight: 700;
+    color: $white-50;
+    text-align: start;
+    @media (max-width: 1444px) {
+      font-size: 45px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 35px;
+    }
+    @media (max-width: 1024px) {
+      font-size: 30px;
+    }
+    @media (max-width: 768px) {
+      font-size: 25px;
+    }
+  }
+}

@@ -1,0 +1,220 @@
+@use "../../../styles/variables" as *;
+
+.message-chat-bubble {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    .message-chat-bubble-body {
+        display: block;
+        max-width: 630px;
+        background-color: $blue-50;
+        border-radius: 0 20px 20px 20px;
+        padding: 14px 21px 7px;
+
+        .message-chat-content {
+            font-family: $font-roboto;
+            font-size: 16px;
+            font-weight: 400;
+            color: $dark-blue;
+            word-break: break-word;
+
+            a {
+                text-decoration: underline;
+                transition: color .3s ease-in-out;
+
+                &:hover {
+                    color: $blue-600;
+                }
+            }
+        }
+
+        .message-chat-read-indicator-time {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 5px;
+
+            h6 {
+                font-family: $font-roboto;
+                font-size: 13px;
+                font-weight: 400;
+                color: $blue-300;
+                text-transform: capitalize;
+            }
+
+            .message-chat-read-indicator {
+                svg {
+                    path {
+                        fill: $blue-700;
+                    }
+                }
+            }
+        }
+
+        .message-file {
+            min-width: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            background-color: $white-50;
+            border-radius: 10px;
+            padding: 13px 20px 15px;
+            margin-bottom: 10px;
+            transition: background-color .3s ease-in-out;
+
+            .message-file-icon-name {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .file-name-weight {
+                p {
+                    max-width: 488px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-family: $font-roboto;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $dark-blue;
+                }
+
+                h6 {
+                    width: fit-content;
+                    font-family: $font-roboto;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #66666666;
+                }
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                transition: opacity .3s ease-in-out;
+            }
+
+            &:hover {
+                background-color: $white-100;
+
+                img {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .message-reply {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background-color: $white-50;
+            border-radius: 20px 0 20px 20px;
+            padding: 8px 22px;
+            margin-bottom: 10px;
+
+            svg {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+
+            .reply-msg {
+                max-width: 488px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    .message-chat-bubble-reply-btn {
+        display: block;
+        background: none;
+        border: none;
+        outline: none !important;
+        margin-top: 2%;
+
+        svg {
+
+            path,
+            rect {
+                transition: fill .3s ease-in-out;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            svg {
+                rect {
+                    fill: $blue-700;
+                }
+
+                path {
+                    fill: $white-50;
+                }
+            }
+        }
+    }
+
+    &.this-message-is-mine {
+        align-self: flex-end;
+        flex-direction: row-reverse;
+
+        .message-chat-bubble-body {
+            background-color: #E5EFFF;
+            border-radius: 20px 20px 0 20px;
+
+            // .message-chat-content {
+            //     text-align: right;
+            // }
+
+            .message-chat-read-indicator-time {
+                // flex-direction: row-reverse;
+                justify-content: flex-end;
+                
+                .message-chat-read-indicator {
+                    svg {
+                        path {
+                            fill: $blue-600;
+                        }
+                    }
+                }
+            }
+        }
+
+        .message-chat-bubble-reply-btn {
+            display: none;
+            // transform: rotateY(180deg);
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .message-chat-bubble-body {
+            .message-file {
+                min-width: 200px;
+
+                .file-name-weight {
+                    p {
+                        max-width: 100px;
+                    }
+                }
+            }
+
+            .message-reply {
+                .reply-msg {
+                    max-width: 100px;
+                }
+            }
+        }
+    }
+}
+.message-chat-bubble-body.single-line {
+    display: flex;
+    gap: 10px;
+}

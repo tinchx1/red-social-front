@@ -1,0 +1,66 @@
+.container {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 16px;
+  margin-bottom: 46px;
+}
+
+.tabsHeader {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 0 16px;
+}
+
+.tab {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 12px;
+  background: $blue-50;
+  color: $blue-700;
+  font-weight: 600;
+  text-wrap: nowrap;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+
+  &:hover {
+    background: $blue-100;
+  }
+
+  &.active {
+    background: $blue-500;
+    color: $white-50;
+  }
+}
+
+.tabContent {
+  min-height: 400px;
+}
+
+// Mobile specific adjustments
+@media (max-width: 768px) {
+  .tabsHeader {
+    padding: 0 12px;
+  }
+  
+  .tab {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabsHeader {
+    padding: 0 8px;
+    gap: 8px;
+  }
+  
+  .tab {
+      padding: 8px;
+      font-size: 12px;
+  }
+}

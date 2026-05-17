@@ -1,0 +1,153 @@
+.footer {
+  color: #666;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-family: $font-roboto;
+}
+
+.contactSection {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.contactTitle {
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0%;
+  margin: 0;
+  color: $blue-500;
+  text-transform: uppercase;
+}
+
+.contactInfo {
+  p {
+    margin: 0.25rem 0;
+    color: #999;
+  }
+}
+
+.socialMedia {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid $blue-500;
+  border-radius: 50%;
+  color: $blue-500;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  span {
+    font-weight: 500;
+  }
+}
+
+.copyright {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  p {
+    margin: 0.25rem 0;
+    color: #999;
+    font-size: 0.75rem;
+  }
+}
+
+.developer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #999;
+  font-size: 0.75rem;
+}
+
+.delsudLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.delsudSymbol {
+  font-size: 1rem;
+  color: $dark-blue;
+}
+
+.delsudText {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mainLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding-top: 1rem;
+  max-height: 30px;
+}
+
+.apiaText {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.fullName {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+
+  span {
+    color: $blue-800;
+    font-size: 0.625rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Force APiA logo to render in black regardless of inline SVG fills */
+.apiaIcon {
+  display: inline-block;
+  max-height: 38px;
+  path {
+    fill: #000;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    display: none;
+  }
+}

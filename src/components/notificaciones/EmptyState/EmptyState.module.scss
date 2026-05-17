@@ -1,0 +1,79 @@
+.container {
+  padding: 32px;
+  background: $white-50;
+  min-height: 700px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  text-align: left;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    min-height: 50vh;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  color: $dark-blue;
+  margin-bottom: 48px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.titleMain {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 22px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  margin: 0;
+}
+.icon {
+  color: $title-dark;
+  margin: 24px auto 24px;
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.title {
+  font-family: $font-roboto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-align: center;
+  color: $blue-900;
+  margin: 0 0 12px;
+}
+
+.text {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-align: center;
+  color: $white-900;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.cta {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+

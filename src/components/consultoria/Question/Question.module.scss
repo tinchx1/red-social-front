@@ -1,0 +1,93 @@
+.question {
+  padding: 40px 0;
+  background: $dark-blue;
+}
+
+.container {
+  width: min(1080px, 92%);
+  margin: 40px auto;
+}
+
+.sections {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+
+}
+.section {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.mainTitle {
+  color: $white-50;
+  font-family: $font-epilogue;
+  font-style: bold;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 27px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    font-size: 37px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+}
+.title {
+  color: $blue-500;
+  font-family: $font-epilogue;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 120%;
+  letter-spacing: 0;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $blue-50;
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    text-align: left;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+  }
+}
+
+.item + .item {
+  margin-top: 14px;
+}
+
+.itemButton {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: $white-50;
+  border: 0;
+  border-bottom: 1px solid $blue-500;
+  padding: 8px 4px;
+  font-family: $font-roboto;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0;
+  vertical-align: middle;
+  align-items: end;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+}

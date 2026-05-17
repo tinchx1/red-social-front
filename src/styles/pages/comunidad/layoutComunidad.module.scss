@@ -1,0 +1,82 @@
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 375px;
+  gap: 16px;
+  padding: 0 16px 16px 16px;
+  min-height: calc(100vh - 60px);
+  margin-top: 37px;
+  height: auto;
+
+  // @media (max-width: 1200px) {
+  //   grid-template-columns: 1fr;
+  //   grid-template-rows: auto auto auto;
+  // }
+  @media (max-width: 1200px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+}
+.leftDiv {
+  grid-column: 1;
+  grid-row: 1;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 1;
+    // width: 100%;
+  }
+}
+
+.comunidades-content {
+  grid-column: 2;
+  grid-row: 1;
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+  }
+}
+
+.RightDiv {
+  grid-column: 3;
+  grid-row: 1;
+  width: 100%;
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+// AboutCommunity skeleton styles
+.aboutCommunitySkeleton {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  height: 200px;
+}
+
+.skeletonContent {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

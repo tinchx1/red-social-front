@@ -1,0 +1,207 @@
+.inlineContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.title {
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: 20px;
+  font-weight: 600;
+  color: $black-100;
+}
+
+.subtitle {
+  margin: 4px 0 0 0;
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $white-800;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: $blue-50;
+  color: $blue-600;
+  font-family: $font-roboto;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cropper {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  background: $black-100;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  color: $white-50;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+
+  &:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.actionsOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.actionsOverlay .actions {
+  pointer-events: auto;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.zoomLabel {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $white-800;
+  @media (max-width: 720px) {
+    display: none;
+  }
+}
+
+.zoomActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: $white-50;
+  border: 1px solid $white-200;
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.zoomButton {
+  border: 0;
+  background: transparent;
+  color: $blue-700;
+  font-size: 18px;
+  font-weight: 600;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:disabled {
+    color: $white-500;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    color: $blue-500;
+  }
+}
+
+.zoomValue {
+  font-family: $font-roboto;
+  font-size: 13px;
+  font-weight: 600;
+  color: $white-700;
+  min-width: 48px;
+  text-align: center;
+}
+
+.zoomSlider {
+  flex: 1;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: $white-300;
+  outline: none;
+  cursor: pointer;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: $blue-500;
+    border: 2px solid $white-50;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: $blue-500;
+    border: 2px solid $white-50;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.applyButton {
+  &:hover:not(:disabled) {
+    border-color: $blue-400 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .badge {
+    align-self: flex-end;
+  }
+}

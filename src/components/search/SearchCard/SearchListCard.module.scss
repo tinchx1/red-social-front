@@ -1,0 +1,138 @@
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px; // required 14px radius
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card--posts {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  padding-bottom: 16px;
+  gap: 0;
+}
+
+.card__title {
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  color: $title-dark;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.card--posts .card__title {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 16px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  :global(.postcard-search-first) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: none;
+  }
+  :global(.postcard-search) {
+    box-shadow: none;
+    margin-bottom: 0px;
+  }
+  :global(.postcard-search-last) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+  }
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.row__border {
+  border-bottom: 1px solid $white-500;
+  padding-bottom: 20px;
+}
+.row__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.row__avatar {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  flex-shrink: 0;
+}
+
+.row__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.row__name {
+  font-weight: 600;
+  color: $black;
+}
+
+.row__subtitle {
+  font-size: 14px;
+  color: $black;
+}
+
+.row__meta {
+  font-size: 12px;
+  color: $white-700;
+}
+
+.card__footer {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// Match title panel styling for posts, but as a bottom section
+.card--posts .card__footer {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  padding: 16px;
+  margin-top: 0;
+}
+
+.button {
+  font-size: 14px;
+  color: $title-dark;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-family: $font-roboto;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.2;
+  text-decoration-color: $blue-500;
+}

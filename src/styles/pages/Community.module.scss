@@ -1,0 +1,130 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+  gap: 16px;
+  min-height: calc(100vh - 60px);
+  margin-top: 25px;
+
+  @media (max-width: 1600px) {
+    grid-template-columns: 1fr 600px 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr 600px 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    max-width: 600px;
+    gap: 12px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 8px;
+    gap: 8px;
+  }
+}
+
+.containerComunidad {
+  grid-template-columns: 1fr 600px 1fr;
+  padding-inline: 12px;
+  @media (max-width: 1600px) {
+    grid-template-columns: 1fr 600px 1fr;
+  }
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr 600px 1fr;
+  }
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content auto auto;
+    max-width: 600px;
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+.leftSidebar {
+  grid-column: 1;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.mainContent {
+  grid-column: 2;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+.rightSidebar {
+  grid-column: 3;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+/* Visibility utilities */
+.showDesktop {
+  display: block;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.showMobile {
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: block;
+  }
+}
+
+.volverButton {
+  display: block;
+  @media (max-width: 1600px) {
+    display: none;
+  }
+}
+
+@media (max-width: 1201px) {
+  .container {
+    margin-top: 5px;
+  }
+}
+.hideTablet {
+  display: block;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.containerNotifications {
+  padding: 16px;
+  background: $white-50;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-decoration: none;
+  color: $title-dark;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: $font-roboto;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,41 @@
+stages:
+  - deploy
+
+deploy_apia_dev:
+  stage: deploy
+  only:
+    - demo
+  script:
+    - echo "🛠 Verificando entorno"
+    - which node
+    - which npm
+    - node -v
+    - npm -v
+
+    - echo "📂 Moviéndose al directorio del proyecto"
+    - cd /home/Apia/DEV/apia-social-front
+
+    - echo "🔍 Validando variables"
+    - |
+      if [ -z "$GIT_USERNAME" ] || [ -z "$GIT_PASSWORD" ]; then
+        echo "❌ Faltan variables GIT_USERNAME o GIT_PASSWORD"
+        exit 1
+      fi
+
+    - echo "🔧 Reconfigurando remote con credenciales CI"
+    - git remote set-url origin "http://$GIT_USERNAME:$GIT_PASSWORD@srv674661.hstgr.cloud/delsud/apia/apia-social-front.git"
+
+    - echo "🔄 Haciendo git pull"
+    - git reset --hard HEAD
+    - git pull
+
+    - echo "📦 Instalando dependencias"
+    - npm install
+
+    - echo "⚙️ Ejecutando build (sin CI warnings como errores)"
+    - CI='' npm run build
+
+    - echo "🔁 Reiniciando PM2"
+    - sudo pm2 restart apia-social-front-test
+
+    - echo "✅ Despliegue completado exitosamente"

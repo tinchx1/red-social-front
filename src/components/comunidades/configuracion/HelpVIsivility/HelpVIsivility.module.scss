@@ -1,0 +1,35 @@
+.toggleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggleContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.helpText {
+  background: $blue-50;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 8px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: $title-dark;
+  text-align: left;
+  margin-top: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    font-weight: 500;
+  }
+}

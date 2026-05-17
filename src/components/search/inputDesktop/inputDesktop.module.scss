@@ -1,0 +1,84 @@
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 0 16px;
+  width: 280px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:focus-within {
+    background-color: $white-50;
+    border-color: $blue-500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &:hover {
+    background-color: $white-50;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-left: 16px;
+  }
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: 12px;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.searchInput {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: $dark-blue;
+  font-size: 14px;
+  font-family: $font-roboto;
+  font-weight: 400;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  &:focus {
+    color: $dark-blue;
+  }
+}
+
+// Responsive adjustments
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .searchContainer {
+    max-width: 170px;
+  }
+
+  .searchInput {
+    max-width: 100px;
+  }
+}
+@media (max-width: 679px) {
+  .searchContainer {
+    display: none;
+  }
+}

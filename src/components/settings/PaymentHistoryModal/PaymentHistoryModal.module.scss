@@ -1,0 +1,382 @@
+.container {
+  padding: 16px 0;
+  min-height: 500px; // Altura mínima fija para mantener dimensiones
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px;
+  p {
+    font-family: $font-roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: $white-900;
+    margin: 0;
+  }
+}
+
+.historyLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 341.39px; // Altura fija para mantener dimensiones
+  padding: 32px;
+
+  p {
+    font-family: $font-roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: $white-900;
+    margin: 0;
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 32px;
+
+  p {
+    font-family: $font-roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: $white-900;
+    margin: 0;
+  }
+}
+
+.content {
+  min-height: 450px; // Altura fija para mantener dimensiones consistentes
+  max-height: 550px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+
+  @media screen and (max-width: 768px) {
+    min-height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+.paymentItem {
+  padding: 10px;
+  background: $white-50;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.paymentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planName {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1a1a1a;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+}
+.title {
+  font-family: Epilogue !important;
+  font-weight: 700 !important;
+  font-style: Bold !important;
+  font-size: 37px !important;
+  line-height: 120% !important;
+  letter-spacing: 0% !important;
+  text-transform: uppercase;
+  color: #000 !important;
+  text-align: start !important;
+  margin: 0 !important;
+  margin-left: 10px !important;
+
+  @media (max-width: 768px) {
+    font-size: 25px !important;
+  }
+}
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: $font-roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.statusActive {
+  background: $white-100;
+  color: $white-500;
+}
+
+.statusExpired {
+  background: $white-200;
+  color: $white-700;
+}
+
+.statusDefault {
+  background: $white-200;
+  color: $white-700;
+}
+
+.paymentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceHeader {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1a1a1a;
+
+  @media (max-width: 768px) {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+  }
+}
+
+.label {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #616161;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+  }
+}
+
+.value {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #616161;
+  margin: 0;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-inline: 10px;
+  position: sticky;
+  bottom: 0;
+  background: white;
+  z-index: 10;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+  }
+}
+
+.paginationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: #1a1a1a;
+  }
+
+  &:hover:not(.disabled) {
+    background: #f5f5f5;
+    border-color: #999;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.pageIndicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #1a1a1a;
+}
+
+.currentPage,
+.totalPages,
+.pageSeparator {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 12px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.historySection {
+  margin-top: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+
+  @media screen and (max-width: 768px) {
+    flex: none;
+  }
+}
+
+.historyTitle {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1a1a1a;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+
+  @media screen and (max-width: 768px) {
+    overflow-y: visible;
+    flex: none;
+  }
+}
+
+.historyItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.historyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 10px;
+}
+
+.historyDate,
+.historyAmount {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1a1a1a;
+
+  @media (max-width: 768px) {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+  }
+}
+
+.membershipPeriod,
+.paymentMethod {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #616161;
+  margin: 0;
+  margin-inline: 10px;
+
+  @media (max-width: 768px) {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+  }
+}

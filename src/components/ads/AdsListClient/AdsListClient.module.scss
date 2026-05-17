@@ -1,0 +1,259 @@
+.id {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0c161d;
+}
+
+.date {
+  font-weight: 500;
+  font-size: 14px;
+  color: #0c161d;
+}
+
+.statusText {
+  font-weight: 500;
+  font-size: 14px;
+  color: #0c161d;
+  text-transform: uppercase;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100dvh - 282px);
+}
+
+.loadingSpinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: $gray-600;
+  padding: 24px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid $blue-600;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100dvh - 282px);
+  gap: 24px;
+  padding: 40px 16px;
+}
+
+.emptyMessage {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #7f7f7f;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.emptyButton {
+  display: flex;
+  justify-content: center;
+}
+
+// Table column alignment
+.tableWrapper {
+  :global {
+    table {
+      table-layout: fixed;
+      width: 100%;
+
+      // First 4 columns (ID, ESTADO, DESDE, HASTA)
+      thead th:nth-child(1),
+      thead th:nth-child(2),
+      thead th:nth-child(3),
+      thead th:nth-child(4) {
+        width: 8.25%;
+      }
+
+      // Last 3 columns (PAGO, PRECIO, DETALLE) - aligned right
+      thead th:nth-child(5),
+      thead th:nth-child(6),
+      thead th:nth-child(7) {
+        width: 12.25%;
+      }
+
+      // Column 4 (HASTA) takes remaining space to push 5, 6 and 7 to the right
+      thead th:nth-child(4) {
+        width: auto;
+        text-align: left;
+        padding-left: 57px;
+      }
+
+      // First 3 columns content
+      tbody td:nth-child(1),
+      tbody td:nth-child(2),
+      tbody td:nth-child(3) {
+        width: 8.25%;
+      }
+
+      // Column 4 content takes remaining space
+      tbody td:nth-child(4) {
+        width: auto;
+        text-align: left;
+        padding-left: 40px;
+      }
+
+      // Last 3 columns content align right (PAGO, PRECIO, DETALLE)
+      tbody td:nth-child(5),
+      tbody td:nth-child(6),
+      tbody td:nth-child(7) {
+        width: 12.25%;
+      }
+    }
+  }
+}
+
+// Desktop filters row
+.filtersRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+
+  @media (max-width: 1199px) {
+    display: none !important;
+  }
+}
+
+// Header filters (rendered in page header)
+.headerFilters {
+  display: none;
+
+  @media (min-width: 1200px) {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-left: auto;
+    max-width: 600px;
+    flex: 0 0 auto;
+  }
+}
+
+.dateFilterContainer {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+
+  .headerFilters & {
+    flex: 0 0 auto;
+    max-width: 400px;
+  }
+}
+
+.dateInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+
+  .headerFilters & {
+    flex: 0 0 auto;
+    min-width: 150px;
+    max-width: 180px;
+  }
+}
+
+.dateInput {
+  height: 39px !important;
+  padding: 8px 30px 8px 20px !important;
+  border: 1px solid #7f7f7f !important;
+  border-radius: 5px !important;
+  background-color: #eee !important;
+  color: #7f7f7f !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+  min-height: 39px !important;
+  width: 100% !important;
+
+  &:hover {
+    background-color: #e0e0e0 !important;
+    border-radius: 5px !important;
+  }
+
+  &:focus {
+    background-color: #ffffff !important;
+    border-color: $blue-500 !important;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2) !important;
+  }
+
+  &::placeholder {
+    color: #7f7f7f !important;
+    font-weight: 400 !important;
+  }
+}
+
+.clearButton {
+  position: absolute;
+  right: 9px;
+  top: 34px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  z-index: 1;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.clearFiltersBtn {
+  &:disabled {}
+}
+
+.price {
+  font-weight: 500;
+  font-size: 14px;
+  color: #0c161d;
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}

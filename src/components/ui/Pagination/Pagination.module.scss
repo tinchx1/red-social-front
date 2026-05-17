@@ -1,0 +1,93 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 32px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(16, 24, 40, 0.08);
+}
+
+.paginationInfo {
+  display: flex;
+  align-items: center;
+}
+
+.pageText {
+  font-size: 14px;
+  font-weight: 500;
+  color: #00193a;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pages {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  margin: 0 8px;
+}
+
+.ellipsis {
+  color: #181d25;
+  font-size: 14px;
+  line-height: 28px;
+  min-width: 28px;
+  text-align: center;
+}
+
+.pageButton {
+  height: 28px;
+  width: 28px;
+  min-width: 28px;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageSizeSelect {
+  background-color: $blue-500 !important;
+  color: $white-50 !important;
+  border: none !important;
+  width: 100px !important;
+
+  &:hover {
+    background-color: $blue-600 !important;
+  }
+
+  &.select--focused {
+    box-shadow: 0 0 0 2px $blue-200;
+    border: none !important;
+    color: $white-50 !important;
+  }
+
+  // Force all text and elements inside to be white
+  *,
+  .selectValue,
+  .selectValue.selected,
+  .selectValue.placeholder,
+  .selectArrow {
+    color: $white-50 !important;
+  }
+}
+
+.totals {
+  font-size: 14px;
+  color: #181d25;
+}

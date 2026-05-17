@@ -1,0 +1,537 @@
+// RouteComunity.module.scss - Versión optimizada
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+// Local overlay/panel to avoid clashes with global Modal styles
+.overlayRC {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panelRC {
+  background: $white-50;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelBodyRC {
+  overflow-y: hidden;
+  @media (max-width: 768px) {
+    overflow-y: auto;
+  }
+}
+
+// Estilos para versión Desktop
+.containerRoutes {
+  background: $white-50;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid $white-300;
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 500;
+  color: $black-100;
+  margin: 0 0 4px 0;
+  padding-block: 24px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid $white-500;
+  align-items: center;
+  padding-inline: 24px;
+  margin-bottom: 1rem;
+}
+
+.routesContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.menuItem {
+  margin-bottom: 8px;
+}
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  padding: 8px 12px;
+
+  &:hover {
+    background-color: #f5f5f5;
+
+    .label {
+      color: $blue-500;
+    }
+  }
+
+  &.active {
+    background-color: $white-100;
+  }
+}
+
+.routeContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.mainItemButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  flex: 1;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex: 1;
+
+  &:hover .label {
+    color: $blue-500;
+  }
+
+  &.active .route {
+    background-color: $white-100;
+    border-radius: 6px;
+  }
+}
+
+.route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.label {
+  color: $black-100;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25px;
+  height: 25px;
+  margin-left: 12px;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: $black-100;
+}
+
+.icon {
+  color: black;
+  width: 30px;
+  height: 30px;
+
+  @media (max-width: 375px) {
+    display: none;
+  }
+}
+
+.iconSearch {
+  color: black;
+  width: 20px;
+  height: 20px;
+}
+
+.subOptions {
+  margin-top: -4px;
+  animation: fadeIn 0.3s ease;
+  background-color: $white-100;
+  border-radius: 6px;
+}
+
+.subLink {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 17px 8px 19px;
+  color: $black-100;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin-bottom: 4px;
+
+  &:hover {
+    background-color: #f5f5f5;
+    color: $blue-500;
+  }
+
+  &.subActive {
+    background-color: $white-400;
+    color: $blue-600;
+    font-weight: 600;
+  }
+}
+
+.subLabel {
+  flex: 1;
+}
+
+.subCount {
+  margin-left: 12px;
+}
+
+// Botón crear en desktop
+.create {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-roboto;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: $black-100;
+  margin: 0 0 4px 0;
+  padding: 5px 24px;
+  border-radius: 10px;
+  background-color: $blue-500;
+  color: $white-50;
+  height: 40px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $blue-600;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+// Contenedor de upgrade en desktop
+.upgradeContainerDesktop {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 4px 0;
+  align-items: flex-start;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.upgradeLimitTextDesktop {
+  font-size: 11px;
+  font-weight: 400;
+  color: $black-300;
+  font-family: $font-roboto;
+  line-height: 1.2;
+  text-align: center;
+}
+
+// Botón de upgrade en desktop
+.upgradeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-roboto;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  padding: 10px 24px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, $blue-500 0%, $blue-600 100%);
+  color: $white-50;
+  height: 40px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, $blue-600 0%, $blue-700 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.upgradeContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.upgradeText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: $white-50;
+}
+
+.upgradeIcon {
+  font-size: 18px;
+  font-weight: 700;
+  color: $white-50;
+  animation: bounce 2s infinite;
+  width: 30px;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+// Estilos para versión Mobile
+.containerRoutesMobile {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.tituloMobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-epilogue;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 27px;
+  width: 100%;
+}
+
+.routesContainerMobile {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 8px;
+
+  @media (max-width: 370px) {
+    flex-wrap: wrap;
+  }
+}
+
+.linkMobile {
+  display: block;
+  text-decoration: none;
+  flex: 1;
+  background-color: $blue-50;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  &:hover {
+    background-color: $blue-100;
+  }
+
+  &.activeMobile {
+    background-color: $blue-500;
+    border-color: $blue-500;
+
+    .labelMobile {
+      color: $white-50;
+      font-weight: 600;
+    }
+  }
+}
+
+.routeMobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.labelMobile {
+  font-size: 14px;
+  color: $title-dark;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 455px) {
+  .labelMobile {
+    font-size: 10px;
+  }
+}
+
+// Botón crear en mobile
+.createMobileButton {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 54px;
+    padding: 12px;
+    background-color: $blue-500;
+    color: $white-50;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $blue-600;
+    }
+  }
+}
+
+.iconMobile {
+  width: 18px;
+  height: 18px;
+}
+
+.upgradeButtonMobile {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, $blue-500 0%, $blue-600 100%);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    width: 100%;
+    &:hover {
+      background: linear-gradient(135deg, $blue-600 0%, $blue-700 100%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.upgradeContainerMobile {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+}
+
+.upgradeLimitText {
+  font-size: 10px;
+  font-weight: 400;
+  color: $black-300;
+  font-family: $font-roboto;
+  line-height: 1.2;
+}
+
+.upgradeTextMobile {
+  font-size: 12px;
+  font-weight: 600;
+  color: $white-50;
+  font-family: $font-roboto;
+}
+
+// Estilos para el enlace con icono
+.iconLink {
+  flex: 0 0 auto;
+  width: 54px;
+  padding: 12px;
+}
+
+.settingIcon {
+  width: 19px;
+  height: 18px;
+  color: $black-100;
+  transition: color 0.3s ease;
+}
+
+.iconLink.activeMobile .settingIcon {
+  color: $white-50;
+}
+
+// Animación para la aparición de subopciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

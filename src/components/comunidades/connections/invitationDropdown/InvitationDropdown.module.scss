@@ -1,0 +1,130 @@
+// components/comunidades/invitationDropdown/InvitationDropdown.module.scss
+.dropdownContainer {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: $white-50;
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  background-color: $white-50;
+  transition: background-color 0.3s ease;
+  height: 59px;
+  &:hover {
+    background-color: $white-50;
+  }
+
+  &.open {
+    background-color: $white-50;
+    border-bottom: 1px solid $white-400;
+  }
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.headerContentRight{
+  display: flex;
+  gap:0.5rem;
+  align-items: center;
+}
+
+.arrowIcon {
+  color: $black-200;
+}
+
+.title {
+  font-family: $font-roboto;
+  font-size: 16px;
+  color: $title-dark;
+}
+
+.count {
+  font-family: $font-roboto;
+  font-size: 16px;
+  color: $title-dark;
+}
+
+.variant {
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 600;
+  color: $blue-500;
+  // background-color: $white-400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+.arrow {
+  font-size: 14px;
+  color: $title-dark;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+
+  svg {
+    display: block;
+  }
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdownContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+
+  &.open {
+    max-height: 2000px; // Valor suficientemente alto para contener todas las cards
+  }
+}
+
+.card {
+  margin: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.emptyMessage {
+  padding: 2rem;
+  text-align: center;
+  font-family: $font-roboto;
+  color: black;
+  font-style: italic;
+}
+
+// Media query para ajustes en mobile
+@media (max-width: 480px) {
+  .dropdownHeader {
+    padding: 0.75rem 1rem;
+  }
+
+  .headerContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .title,
+  .count,
+  .variant {
+    font-size: 16px;
+  }
+}

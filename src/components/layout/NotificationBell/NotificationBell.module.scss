@@ -1,0 +1,44 @@
+.notificationButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+  background: none;
+  border-radius: 50%;
+  padding: 8px;
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.icon {
+  display: block;
+}
+
+.wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}

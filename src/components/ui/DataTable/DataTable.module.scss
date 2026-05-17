@@ -1,0 +1,139 @@
+.tableContainer {
+  min-height: calc(100dvh - 315px);
+  overflow: visible;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #efefef;
+}
+
+.header {
+  background: $blue-800;
+  color: $white-50;
+  border: 1px solid #0288c2;
+
+  th {
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.body {
+  tr {
+    &:nth-child(even) {
+      background: $gray-50;
+    }
+
+    &:nth-child(odd) {
+      background: $white-50;
+    }
+  }
+
+  td {
+    padding: 16px 12px;
+    border: none;
+    font-family: $font-roboto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $black-300;
+    vertical-align: middle;
+    text-align: center;
+    overflow: visible;
+    position: relative;
+    z-index: 50;
+  }
+}
+
+.id {
+  color: $blue-700;
+}
+
+.name {
+  color: $black-300;
+}
+
+.email {
+  color: $gray-600;
+}
+
+.contact {
+  color: $gray-700;
+}
+
+.sector {
+  color: $gray-600;
+  text-transform: capitalize;
+}
+
+.company {
+  color: $black-300;
+}
+
+.noData {
+  text-align: center;
+  color: $gray-500;
+  font-style: italic;
+  padding: 40px 16px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.loadingSpinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: $gray-600;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid $blue-600;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Hide table at 1200px and below
+@media (max-width: 1199px) {
+  .tableContainer {
+    display: none;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .table {
+    font-size: 12px;
+  }
+
+  .header th,
+  .body td {
+    padding: 12px 8px;
+  }
+}

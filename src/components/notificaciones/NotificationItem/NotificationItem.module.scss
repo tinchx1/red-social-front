@@ -1,0 +1,137 @@
+.card {
+  position: relative;
+  display: flex;
+  padding-inline: 32px;
+  background-color: $white-50;
+  text-decoration: none;
+  &:first-child {
+    border-radius: 10px 10px 0 0;
+  }   
+  &:last-child {
+    border-radius: 0 0 10px 10px;
+  }
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
+}
+
+.link {
+  display: flex;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: 75px;
+  width: 100%;
+}
+
+.avatar {
+  border-radius: 999px;
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+
+.content {
+  flex: 1;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+.time {
+  color: $gray-500;
+  font-size: 12px;
+}
+
+.moreBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.moreDesktop { display: none; }
+.moreMobile { display: inline; }
+
+@media (min-width: 768px) {
+  .moreDesktop { display: inline; }
+  .moreMobile { display: none; }
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.unread {
+  background: $blue-50;
+}
+
+
+.undoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 75px;
+  width: 100%;
+}
+
+.undoText {
+  color: $gray-900;
+  font-weight: 500;
+}
+
+.undoBtn {
+  background: transparent;
+  border: 0;
+  color: $blue-700;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.progressBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: $white-300;
+}
+
+.progressFill {
+  height: 100%;
+  background: $blue-700;
+  width: 0%;
+  transition: width 50ms linear;
+}
+
+

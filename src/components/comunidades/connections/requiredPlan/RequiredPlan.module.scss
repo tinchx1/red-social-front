@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  font-family: $font-roboto;
+  gap: 1rem;
+}
+
+.title {
+  display: flex;
+  font-size: 18px;
+  font-weight: 600;
+  color: $blue-900;
+}
+
+.description {
+  font-size: 14px;
+  color: $blue-500;
+  width: 60%;
+}
+
+.icon {
+  color: $blue-900;
+  width: 40px;
+  height: 40px;
+  transform: scale(1.5);
+  transform-origin: center;
+}
+
+.button {
+  width: 80%;
+}

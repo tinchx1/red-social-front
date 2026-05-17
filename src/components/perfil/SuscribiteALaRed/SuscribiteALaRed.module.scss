@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle {
+  color: $white-700;
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.title {
+  color: $title-dark;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 2px 0 0 0;
+  font-weight: 400;
+  text-wrap: nowrap;
+}
+
+.icon {
+  color: #0288C2;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

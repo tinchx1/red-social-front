@@ -1,0 +1,139 @@
+.noShowDesktop {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.dateFilterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+// Date input styling to match Select component
+.dateInput {
+  height: 39px !important;
+  padding: 8px 20px !important;
+  border: 1px solid #7f7f7f !important;
+  border-radius: 5px !important;
+  background-color: #eee !important;
+  color: #7f7f7f !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+  min-height: 39px !important;
+  width: 100% !important;
+
+  &:hover {
+    background-color: #e0e0e0 !important;
+    border-radius: 5px !important;
+  }
+
+  &:focus {
+    background-color: #ffffff !important;
+    border-color: #1a73e8 !important;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2) !important;
+  }
+
+  &::placeholder {
+    color: #7f7f7f !important;
+    font-weight: 400 !important;
+  }
+}
+.dateInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dateInputMobile {
+  height: 39px !important;
+  padding: 8px 30px 8px 20px !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 6px !important;
+  background-color: #ffffff !important;
+  flex: 1;
+}
+
+.clearButton {
+  position: absolute;
+  right: 9px;
+  top: 34px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  align-self: end;
+  margin-bottom: 8px;
+}
+
+// Detail link button styling
+.detailLink {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #000;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.noPosts {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #7f7f7f;
+  text-align: center;
+  @media (min-width: 770px) {
+    text-align: left;
+    padding-left: 24px;
+  }
+}
+
+// Cards grid for responsive design
+.cardsGrid {
+  display: none; // Hidden by default on desktop
+  min-height: calc(100dvh - 342px);
+  @media (max-width: 1199px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.date {
+  color: #111;
+}
+

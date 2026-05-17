@@ -1,0 +1,248 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+}
+
+.label {
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 400;
+  color: $black-100;
+  line-height: 1.2;
+
+  &--white {
+    color: $white-100;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  &--file {
+    cursor: pointer;
+  }
+
+  &--iconRight {
+    .input {
+      padding-right: 40px;
+    }
+  }
+}
+
+.inputRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fileInputWrapper {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.fileInputText {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 40px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgba($gray-medium, 0.5);
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  z-index: 2;
+
+  &--right {
+    left: auto;
+    right: 12px;
+  }
+
+  img, svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+}
+
+.input {
+  font-family: $font-roboto;
+  width: 100%;
+  padding: 8px 20px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background-color: $white-100;
+  color: $black-200;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+  height: 40px;
+  // Padding left for icon is set inline in JSX
+
+  &--password {
+    padding-right: 56px;
+  }
+
+  &::placeholder {
+    color: rgba($gray-medium, 0.5);
+    font-weight: 400;
+  }
+
+  &--file {
+    cursor: pointer;
+    color: transparent;
+    &::file-selector-button {
+      display: none;
+    }
+    
+    &::-webkit-file-upload-button {
+      display: none;
+    }
+    
+    &::-moz-file-upload-button {
+      display: none;
+    }
+  }
+
+  &--textarea {
+    min-height: 80px;
+    resize: none;
+    line-height: 120%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: 80px;
+    font-family: $font-roboto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
+
+  &:focus {
+    background-color: $white-50;
+    border-color: $blue-500;
+    box-shadow: 0 0 0 2px $blue-200;
+  }
+
+  &--focused {
+    background-color: $white-50;
+    border-color: $blue-500;
+  }
+
+  &--error {
+    border-color: $red;
+    background-color: $white-50;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+    }
+  }
+
+  &:disabled {
+    background-color: $white-800;
+    color: $white-500;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.input--rounded-small {
+  border-radius: 6px;
+}
+
+.input--rounded-medium {
+  border-radius: 12px;
+}
+
+.input--rounded-large {
+  border-radius: 20px;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: $blue-500;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $blue-400;
+  }
+
+  &:focus {
+    outline: none;
+    color: $blue-600;
+  }
+}
+
+.error {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $red;
+  font-weight: 400;
+  position: static;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .input {
+    font-size: 16px;
+    padding: 8px 18px;
+    height: 40px;
+  }
+  /* Ensure text doesn't go under the toggle on mobile */
+  .input--password {
+    padding-right: 56px;
+  }
+  /* If there is also a right icon, leave extra room */
+  .inputContainer--iconRight {
+    .input.input--password {
+      padding-right: 80px;
+    }
+  }
+  .input--textarea {
+    height: auto;
+    min-height: 100px;
+  }
+  .label {
+    font-size: 15px;
+  }
+
+  .passwordToggle {
+    right: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input--textarea {
+    height: 140px;
+  }
+}

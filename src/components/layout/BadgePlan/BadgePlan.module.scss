@@ -1,0 +1,26 @@
+.badge {
+  width: 99px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background-color: $white-50;
+  border-radius: 1000px;
+  opacity: 1;
+  font-family: $font-roboto;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0;
+  color: $blue-500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  .badgeText {
+    max-width: 87px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

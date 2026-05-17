@@ -1,0 +1,76 @@
+.dropdownContainer {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: $white-300;
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  background-color: $white-100;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: $white-200;
+  }
+  
+  &.open {
+    background-color: $white-300;
+    border-bottom: 1px solid $white-400;
+  }
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title {
+  font-family: $font-roboto;
+  font-size: 18px;
+  font-weight: 600;
+  color: $black-100;
+}
+
+.count {
+  font-family: $font-roboto;
+  font-size: 16px;
+  color: $black-300;
+}
+
+.arrow {
+  font-size: 14px;
+  color: $black-300;
+  transition: transform 0.3s ease;
+}
+
+.dropdownContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  
+  &.open {
+    max-height: 2000px; // Valor suficientemente alto para contener todas las cards
+  }
+}
+
+.card {
+  margin: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.emptyMessage {
+  padding: 2rem;
+  text-align: center;
+  font-family: $font-roboto;
+  color: $black-300;
+  font-style: italic;
+}

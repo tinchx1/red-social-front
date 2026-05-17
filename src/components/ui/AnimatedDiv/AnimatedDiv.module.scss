@@ -1,0 +1,47 @@
+// Initial states (hidden)
+.fadeInUpInitial {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fadeInInitial {
+  opacity: 0;
+}
+
+.slideInLeftInitial {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.scaleInInitial {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+// Animated states (visible)
+.fadeInUpAnimated {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease-out;
+}
+
+.fadeInAnimated {
+  opacity: 1;
+  transition: opacity 0.7s ease-out;
+}
+
+.slideInLeftAnimated {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.7s ease-out;
+}
+
+.scaleInAnimated {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.7s ease-out;
+}
+
+.displayContents {
+  display: contents;
+}

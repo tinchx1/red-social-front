@@ -1,0 +1,82 @@
+.deleteModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 0;
+  text-align: center;
+  font-family: $font-roboto;
+}
+
+.warningIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.confirmationText {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $white-900;
+  margin: 0;
+  text-align: center;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.deleteButton {
+  width: 100%;
+  background-color: $white-200 !important;
+  color: $red-500 !important;
+  border-color: $white-200 !important;
+  font-weight: 500;
+  border-radius: 8px !important;
+
+  &:hover:not(:disabled) {
+    background-color: $white-300 !important;
+    border-color: $white-300 !important;
+    color: $red-500 !important;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.cancelLink {
+  background: none;
+  border: none;
+  color: $blue-500;
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover:not(:disabled) {
+    color: $blue-600;
+    text-decoration: underline;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

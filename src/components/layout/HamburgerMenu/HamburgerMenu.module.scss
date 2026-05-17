@@ -1,0 +1,136 @@
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.hamburgerIcon {
+  width: 25px;
+  height: 25px;
+  color: $white-50;
+  transition: color 0.2s ease;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  path {
+    fill: currentColor;
+  }
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $dark-blue;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.menuContent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.closeButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeButton {
+  background: none;
+  height: 40px;
+  width: 40px;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.closeIcon {
+  color: $blue-200;
+}
+
+.menuItems {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 92px;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 6px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  gap: 20px;
+  border-radius: 12px;
+  max-width: 550px;
+  width: 100%;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.menuIcon {
+  width: 32px;
+  height: 32px;
+  color: $white-50;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.menuLabel {
+  color: $blue-500;
+  font-family: $font-epilogue;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}

@@ -1,0 +1,130 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $dark-blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  z-index: 200;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 75px;
+}
+
+.leftSection,
+.rightSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.searchContainer {
+  display: none;
+  @media (min-width: 680px) {
+    display: block;
+  }
+}
+.leftSection {
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.rightSection {
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.centerSection {
+  flex: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.profileIcon {
+  width: 27px;
+  height: 27px;
+  color: $white-50;
+  transition: color 0.2s ease;
+}
+
+.logo {
+  color: $white-50;
+  display: block;
+}
+
+.borderRight {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  height: 26px;
+  border-right: 1.75px solid $blue-500;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    display: flex;
+  }
+}
+.hideMobile {
+  display: none;
+  @media screen and (min-width: 680px) {
+    display: flex;
+  }
+}
+
+.searchOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000040;
+  z-index: 100;
+  margin-top: 75px;
+  @media (min-width: 1200px) {
+    margin-bottom: 0px;
+  }
+}
+
+@media (min-width: 1071px) {
+  .navbar {
+    display: none;
+  }
+}
+
+.mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 425px) or (min-width: 680px) {
+    display: none;
+  }
+}
+.tablet {
+  display: none;
+  @media (max-width: 1070px) and (min-width: 770px) {
+    display: flex;
+  }
+}

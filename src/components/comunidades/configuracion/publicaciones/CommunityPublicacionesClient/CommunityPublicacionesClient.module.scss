@@ -1,0 +1,335 @@
+// Gestion page headings
+.titleGestion {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 700;
+  padding-top: 24px;
+  font-style: normal;
+  font-size: 37px;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  @media (max-width: 1199px) {
+    display: none;
+  }
+}
+
+// Header row with title and filters
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.headerTitle {
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.filtersRow {
+  display: flex;
+  align-items: flex-end;
+  max-width: 1050px;
+  width: 100%;
+  margin-bottom: 12px;
+  gap: 12px;
+  @media (max-width: 1400px) {
+    max-width: 950px;
+  }
+  @media (max-width: 1300px) {
+    max-width: 850px;
+  }
+
+  @media (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.id {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.email {
+  font-weight: 400;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.contact {
+  font-weight: 400;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.sector {
+  font-weight: 400;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+// Pagination container to center it
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+// Hide pagination at 1200px and below (cards handle pagination differently)
+@media (max-width: 1199px) {
+  .paginationContainer {
+    display: none;
+  }
+}
+
+.searchIcon {
+  position: relative;
+}
+
+.searchInput {
+  background-color: #eee !important;
+  color: #333 !important;
+
+  &:focus {
+    background-color: #eee !important;
+  }
+
+  @media (max-width: 1199px) {
+    background-color: #ffffff !important;
+  }
+}
+
+// Table column widths and truncation
+.tableWrapper {
+  :global(.tableContainer) {
+    table {
+      table-layout: fixed;
+      width: 100%;
+
+      // Column widths - responsive percentages
+      thead th:nth-child(1),
+      tbody td:nth-child(1) {
+        width: 5%; // ID
+        min-width: 50px;
+      }
+
+      thead th:nth-child(2),
+      tbody td:nth-child(2) {
+        width: 8%; // ESTADO
+        min-width: 80px;
+      }
+
+      thead th:nth-child(3),
+      tbody td:nth-child(3) {
+        width: auto; // NOMBRE Y APELLIDO - ajusta al contenido
+        min-width: 150px;
+        padding-left: 12px;
+      }
+
+      thead th:nth-child(4),
+      tbody td:nth-child(4) {
+        width: 14%; // CORREO
+        min-width: 130px;
+      }
+
+      thead th:nth-child(5),
+      tbody td:nth-child(5) {
+        width: 10%; // CONTACTO
+        min-width: 100px;
+      }
+
+      thead th:nth-child(6),
+      tbody td:nth-child(6) {
+        width: 11%; // RUBRO/INDUSTRIA
+        min-width: 110px;
+      }
+
+      thead th:nth-child(7),
+      tbody td:nth-child(7) {
+        width: 11%; // EMPRESA
+        min-width: 110px;
+      }
+
+      thead th:nth-child(8),
+      tbody td:nth-child(8) {
+        width: 10%; // FECHA
+        min-width: 100px;
+      }
+
+      thead th:nth-child(9),
+      tbody td:nth-child(9) {
+        width: 9%; // DETALLE
+        min-width: 90px;
+      }
+
+      @media (max-width: 1600px) {
+        thead th:nth-child(1),
+        tbody td:nth-child(1) {
+          width: 4%;
+          min-width: 45px;
+        }
+
+        thead th:nth-child(2),
+        tbody td:nth-child(2) {
+          width: 7%;
+          min-width: 70px;
+        }
+
+        thead th:nth-child(3),
+        tbody td:nth-child(3) {
+          min-width: 130px;
+        }
+
+        thead th:nth-child(4),
+        tbody td:nth-child(4) {
+          width: 13%;
+          min-width: 120px;
+        }
+
+        thead th:nth-child(5),
+        tbody td:nth-child(5) {
+          width: 9%;
+          min-width: 90px;
+        }
+
+        thead th:nth-child(6),
+        tbody td:nth-child(6) {
+          width: 10%;
+          min-width: 100px;
+        }
+
+        thead th:nth-child(7),
+        tbody td:nth-child(7) {
+          width: 10%;
+          min-width: 100px;
+        }
+
+        thead th:nth-child(8),
+        tbody td:nth-child(8) {
+          width: 9%;
+          min-width: 90px;
+        }
+
+        thead th:nth-child(9),
+        tbody td:nth-child(9) {
+          width: 8%;
+          min-width: 80px;
+        }
+      }
+
+      @media (max-width: 1400px) {
+        thead th:nth-child(1),
+        tbody td:nth-child(1) {
+          width: 3%;
+          min-width: 40px;
+        }
+
+        thead th:nth-child(2),
+        tbody td:nth-child(2) {
+          width: 6%;
+          min-width: 60px;
+        }
+
+        thead th:nth-child(3),
+        tbody td:nth-child(3) {
+          min-width: 120px;
+        }
+
+        thead th:nth-child(4),
+        tbody td:nth-child(4) {
+          width: 12%;
+          min-width: 110px;
+        }
+
+        thead th:nth-child(5),
+        tbody td:nth-child(5) {
+          width: 8%;
+          min-width: 80px;
+        }
+
+        thead th:nth-child(6),
+        tbody td:nth-child(6) {
+          width: 9%;
+          min-width: 90px;
+        }
+
+        thead th:nth-child(7),
+        tbody td:nth-child(7) {
+          width: 9%;
+          min-width: 90px;
+        }
+
+        thead th:nth-child(8),
+        tbody td:nth-child(8) {
+          width: 8%;
+          min-width: 80px;
+        }
+
+        thead th:nth-child(9),
+        tbody td:nth-child(9) {
+          width: 7%;
+          min-width: 70px;
+        }
+      }
+
+      // Truncate all cells
+      tbody td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        // Ensure spans and other inline elements also truncate
+        > span {
+          display: inline-block;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      // Detail column should not truncate
+      tbody td:nth-child(9) {
+        overflow: visible;
+        white-space: normal;
+      }
+    }
+  }
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.email {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.contact {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.sector {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}

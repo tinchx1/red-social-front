@@ -1,0 +1,268 @@
+.perfil-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f8f9fa;
+  padding-top: 25px;
+  font-family: $font-roboto;
+  margin-bottom: 15px;
+  min-height: calc(100vh - 110px);
+}
+.perfil-container-simple {
+  display: grid;
+  grid-template-columns: 120px 1fr 300px;
+  gap: 24px;
+  max-width: 1200px;
+  padding: 24px;
+  margin: 0 auto;
+  padding-top: 25px;
+  margin-bottom: 25px;
+  font-family: $font-roboto;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 110px);
+  @media (max-width: 955px) {
+    grid-template-columns: 1fr;
+  }
+}
+.aside-mobile {
+  display: block;
+  @media (max-width: 955px) {
+    display: none;
+  }
+}
+
+.perfil-main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.perfil-sidebar {
+  align-self: start;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.perfil-cover {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.perfil-logo-container {
+  position: absolute;
+  bottom: -50px;
+  left: 40px;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.perfil-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+.perfil-info {
+  margin-top: 60px;
+
+  .perfil-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    h1 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .perfil-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .perfil-address {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+
+  .perfil-contact {
+    p {
+      margin: 8px 0;
+      font-size: 14px;
+      color: #666;
+
+      span,
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.perfil-body {
+  margin-top: 40px;
+}
+
+.perfil-section {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+  }
+}
+
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.publication-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .publication-content {
+    padding: 16px;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #666;
+
+  &:hover {
+    color: #0066cc;
+  }
+
+  .icon-edit {
+    font-size: 18px;
+  }
+}
+
+.only-mobile {
+  display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .perfil-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+    margin-top: 15px;
+  }
+
+  .perfil-main {
+    width: 100%;
+  }
+
+  .perfil-sidebar {
+    position: static;
+    order: 2;
+  }
+  .perfil-sidebar {
+    display: none;
+  }
+  .only-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .perfil-container {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .perfil-section {
+    padding: 16px;
+  }
+}

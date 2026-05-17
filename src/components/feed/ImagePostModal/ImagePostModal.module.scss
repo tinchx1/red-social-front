@@ -1,0 +1,286 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: $font-roboto;
+}
+
+.container {
+  height: 90vh;
+  background: $white-50;
+  border-radius: 12px;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  position: relative; // make close button position relative to the modal
+  width: 100%;
+  max-width: 1400px; // máximo fijo
+}
+
+@supports (max-width: -webkit-fill-available) {
+  .container {
+    max-width: min(-webkit-fill-available, 1400px);
+  }
+}
+
+@supports (max-width: -moz-available) {
+  .container {
+    max-width: min(calc(100vw - 24px), 1400px);
+    // Se adapta pero con máximo fijo
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: $white-50;
+  border: none;
+  color: $dark-blue;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 201;
+
+  &:hover {
+    background: $white-200;
+  }
+}
+
+.mediaSection {
+  background: #1b1f23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1 1 auto; // crece y se ajusta al espacio disponible
+  min-height: 0;
+  min-width: 0; // permite que se encoja
+  overflow: hidden;
+  max-height: 90vh;
+}
+
+.media {
+  max-width: 100%;
+  height: 100%;
+  width: auto;
+  object-fit: contain; // prevent stretching and avoid perceived zoom on container changes
+  display: block;
+}
+
+.infoSection {
+  background: $white-50;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  padding-top: 0;
+  border-left: 1px solid $white-300;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 0 0 400px; // ancho fijo de 400px
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $white-200;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $white-400;
+    border-radius: 3px;
+
+    &:hover {
+      background: $white-500;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  top: 0;
+  background: $white-50;
+  z-index: 200;
+}
+
+.authorBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authorMeta {
+  flex: 1;
+}
+
+.authorName {
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 600;
+  color: $dark-blue;
+  margin: 0;
+}
+
+.timestamp {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $white-800;
+}
+
+.optionsContainer {
+  position: relative;
+}
+
+.optionsButton {
+  @extend .optionsContainer;
+}
+
+.optionsIcon {
+  width: 24px;
+  height: 20px;
+  color: $dark-blue;
+}
+
+.text {
+  margin: 12px 0 8px;
+  white-space: pre-wrap;
+  font-family: $font-roboto;
+  font-size: 15px;
+  line-height: 1.2;
+  color: $white-800;
+  margin: 0;
+  padding-top: 12px;
+}
+
+.actionsWrapper {
+  position: relative;
+  margin: 8px 0 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: $dark-blue;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: $font-roboto;
+
+  &:hover {
+    background-color: $blue-50;
+    color: $blue-500;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.liked {
+    background-color: $blue-50;
+    color: $blue-500;
+
+    &:hover {
+      background-color: $blue-100;
+    }
+
+    &:active {
+      background-color: $blue-200;
+    }
+  }
+
+  &:active {
+    background-color: $blue-100;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .mediaSection {
+    flex: 1 1 auto; // en móvil, la imagen toma el espacio restante
+  }
+
+  .infoSection {
+    flex: 0 0 45vh; // en móvil, panel fijo de 45vh
+  }
+}
+
+.disabledText {
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 400;
+  color: $gray-medium;
+  line-height: 1.4;
+  margin-top: 16px;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+// Estilos para el contenedor de comentarios
+.commentsContainer {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 65vh;
+  min-height: 0; // Permite que se encoja según el contenido
+
+  // Estilizar la barra de scroll
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $white-200;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $white-400;
+    border-radius: 3px;
+
+    &:hover {
+      background: $white-500;
+    }
+  }
+}

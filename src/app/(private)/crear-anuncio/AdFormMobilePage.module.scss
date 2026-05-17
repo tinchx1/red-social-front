@@ -1,0 +1,148 @@
+.page {
+  min-height: 100vh;
+  background: $white-50;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: $white-50;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 16px;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: start;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: 24px;
+  font-weight: 600;
+  color: $blue-500;
+}
+
+.description {
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: 16px;
+  color: #1a1a1a;
+  font-weight: 400;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.previewContainer {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.previewContainerPosition4 {
+  max-width: 600px;
+}
+
+.preview {
+  display: inline-flex;
+  position: relative;
+  border: 1px solid $white-400;
+  border-radius: 12px;
+  overflow: hidden;
+  background: $white-100;
+  max-width: 360px;
+}
+
+.previewPosition3 {
+  max-width: 280px;
+}
+
+.previewPosition4 {
+  max-width: 500px;
+}
+
+.previewImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.removeButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.2s ease;
+  z-index: 1;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.error {
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $red;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: auto;
+  padding-bottom: 24px;
+  @media (max-width: 964px) {
+    max-width: 340px !important;
+    margin: 0 auto !important;
+  }
+}
+
+.cancelBtn {
+  border: 0px !important;
+}

@@ -1,0 +1,63 @@
+@use "../../../styles/variables" as *;
+
+.avatar-chat {
+  position: relative;
+
+  .default-avatar-chat {
+    display: block;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    background-color: $blue-800;
+    border-radius: 100%;
+  }
+
+  .image-avatar-chat {
+    display: block;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  .connection-status-chat {
+    display: block;
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    min-height: 8px;
+    border: 1px solid $white-50;
+    border-radius: 100%;
+
+    &.status-conected {
+      background-color: $green;
+    }
+
+    &.status-desconected {
+      background-color: $red;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .default-avatar-chat,
+    .image-avatar-chat {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      min-height: 28px;
+    }
+
+    .connection-status-chat {
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      min-height: 6px;
+    }
+  }
+}

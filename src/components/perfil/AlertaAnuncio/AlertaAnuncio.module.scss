@@ -1,0 +1,28 @@
+.alertContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: $blue-50;
+  color: $blue-900;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.iconWrapper {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $white-transparent;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+

@@ -1,0 +1,312 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.grid {
+  display: grid;
+  // Modal max-width: 800px
+  // Mantiene proporciones: sidebar 23.06%, feed 53.86%, sidebar 23.06%
+  // Ancho disponible: 800px - 32px (gaps) = 768px
+  grid-template-columns: 176px 316px 176px;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mobileFrame {
+  width: 176px;
+  height: 500px;
+  background: $white-50;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.label {
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 500;
+  color: $black-200;
+  margin-bottom: 12px;
+}
+
+.leftSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profileSkeleton {
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  height: 165px;
+}
+
+.profileSkeletonCover {
+  width: 100%;
+  height: 60px;
+  border-radius: 12px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background: $white-600;
+}
+
+.profileSkeletonAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: $white-500;
+  border: 4px solid $white-50;
+  margin-top: -46px;
+}
+
+.profileSkeletonText,
+.profileSkeletonTextSmall {
+  background: $white-600;
+  border-radius: 999px;
+  height: 12px;
+}
+
+.profileSkeletonText {
+  width: 80%;
+}
+
+.profileSkeletonTextSmall {
+  width: 60%;
+  height: 10px;
+}
+
+.adsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.placeholderBox {
+  width: 100%;
+  aspect-ratio: 1;
+  background: $white-600;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.placeholderNumber3 {
+  aspect-ratio: 257 / 514;
+  height: 343px;
+}
+.placeholderCircle {
+  width: 120px;
+  height: 120px;
+}
+
+.placeholderNumber {
+  font-family: Epilogue;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 13.95px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: $white-900;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed {
+  border-radius: 24px;
+  padding: 20px;
+  background: $white-50;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 0px !important;
+}
+
+.postSmall,
+.postBig,
+.positionFourCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: $white-100;
+  border-radius: 12px;
+}
+
+.postBig,
+.positionFourCard {
+  gap: 12px;
+  padding: 16px;
+}
+.positionFourCard {
+  background-color: $white-600;
+  height: 43px;
+  border-radius: 12px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Epilogue;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 13.95px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.positionFourWrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.postHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.postMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.staticSkeleton {
+  animation: none !important;
+  background: #ebebeb !important;
+  background-size: auto !important;
+}
+
+.adMediaPortrait,
+.adMediaLandscape {
+  width: 100%;
+  background: $white-100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.adImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.positionFourMedia,
+.positionFourPlaceholder {
+  width: 100%;
+  aspect-ratio: 257 / 514;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.positionFourMedia {
+  background: $white-100;
+  overflow: hidden;
+}
+
+.positionFourPlaceholder {
+  background: #d1d1d1;
+}
+
+.positionFourLabel {
+  font-family: Epilogue;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 13.95px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: $white-900;
+}
+
+.rightSidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.mobilePreview {
+  position: sticky;
+  top: 20px;
+}
+
+.mobileContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.mobileHeader {
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 600;
+  color: $black-100;
+  padding: 8px 0;
+}
+
+.mobileAds {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobileAdMedia {
+  width: 100%;
+  background: $white-100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mobileSection {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid $white-300;
+}
+
+.mobileSectionTitle {
+  font-family: $font-roboto;
+  font-size: 12px;
+  font-weight: 600;
+  color: $black-100;
+  margin-bottom: 4px;
+}
+
+.mobileWallet {
+  font-family: $font-roboto;
+  font-size: 18px;
+  font-weight: 600;
+  color: $black-100;
+}

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.priceInputWrapper {
+  position: relative;
+}
+
+.spinnerWrapper {
+  position: absolute;
+  left: 118px;
+  bottom: 0;
+  top: 32px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+}

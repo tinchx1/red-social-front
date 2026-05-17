@@ -1,0 +1,428 @@
+.postCard {
+  background: $white-50;
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid $white-300;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  position: relative;
+  flex: 1;
+}
+
+.headerContent {
+  padding: 0 20px;
+  margin-bottom: 0;
+}
+
+.orgLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.orgInfo {
+  flex: 1;
+}
+
+.orgName {
+  font-family: $font-roboto;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: $title-dark;
+  margin: 0;
+}
+
+.link {
+  color: $title-dark;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom-color: $blue-500;
+    color: $blue-500;
+  }
+}
+
+.avatarLink {
+  display: inline-flex;
+  align-items: center;
+}
+
+.timestamp {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $white-800;
+}
+
+.optionsContainer {
+  position: relative;
+  margin-left: auto;
+}
+
+.optionsButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $white-200;
+  }
+
+  &:active {
+    background-color: $white-300;
+  }
+}
+
+.optionsIcon {
+  width: 24px;
+  height: 20px;
+  color: $dark-blue;
+}
+
+.content {
+  margin-bottom: 16px;
+}
+
+.sharedPostIndicator {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: $blue-50;
+  border-radius: 8px;
+  border: 1px solid $blue-100;
+
+  span {
+    font-family: $font-roboto;
+    font-size: 14px;
+    color: $blue-600;
+    font-weight: 500;
+  }
+}
+
+.originalPostContainer {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: $white-100;
+  border-radius: 12px;
+  border: 1px solid $white-200;
+  margin-inline: 20px;
+}
+
+.originalPostHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.originalAuthorAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.originalAuthorInfo {
+  flex: 1;
+}
+
+.originalAuthorName {
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 500;
+  color: $dark-blue;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.originalPostContent {
+  .originalPostText {
+    font-family: $font-roboto;
+    font-size: 15px;
+    line-height: 1.5;
+    color: $white-800;
+    margin: 0 0 12px 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+
+    a {
+      color: $blue-500;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom-color: $blue-500;
+      }
+    }
+  }
+
+  a {
+    color: $blue-500;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom-color: $blue-500;
+    }
+  }
+}
+
+.originalPostImage {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $white-200;
+
+  .postImage {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.text {
+  font-family: $font-roboto;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $white-900;
+  margin: 0 0 4px 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding: 0 24px;
+
+  a {
+    color: $blue-500;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom-color: $blue-500;
+      color: $blue-500;
+    }
+  }
+}
+
+.textCollapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.expandBtn {
+  font-family: $font-roboto;
+  text-align: right;
+  background: none;
+  border: none;
+  color: $blue-500;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+  font-size: inherit;
+  padding-left: 5px;
+  display: block;
+  padding-right: 20px;
+  margin-left: auto;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  margin-top: 12px;
+}
+
+.postImage {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+
+  &[src*="data:image"] {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.imageCredit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: $white-50;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: $font-roboto;
+}
+
+.actionsWrapper {
+  position: relative;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px;
+  padding-top: 12px;
+  border-top: 1px solid $white-300;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: $dark-blue;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: $font-roboto;
+
+  &:hover {
+    background-color: $blue-50;
+    color: $blue-500;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.liked {
+    background-color: $blue-50;
+    color: $blue-500;
+
+    &:hover {
+      background-color: $blue-100;
+    }
+
+    &:active {
+      background-color: $blue-200;
+    }
+  }
+
+  &:active {
+    background-color: $blue-100;
+  }
+}
+
+.icon {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .postCard {
+    padding: 16px 0;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .orgLogo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .orgName {
+    font-size: 12px;
+  }
+
+  .timestamp {
+    font-size: 12px;
+  }
+
+  .text {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .originalPostContainer {
+    padding: 12px;
+    margin-top: 12px;
+    margin-inline: 10px;
+  }
+
+  .originalAuthorAvatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .originalAuthorName {
+    font-size: 14px;
+  }
+
+  .originalPostText {
+    font-size: 14px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 8px;
+  }
+
+  .actionBtn {
+    font-size: 13px;
+    padding: 6px 8px;
+    flex: 1;
+    min-width: 90px;
+    font-family: $font-roboto;
+    white-space: nowrap;
+    justify-content: center;
+  }
+
+  .actionBtn svg {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  .optionsContainer {
+    margin-left: auto;
+  }
+
+  .optionsButton {
+    padding: 6px;
+  }
+}
+
+.linkPreviewContainer {
+  margin-inline: 20px;
+}

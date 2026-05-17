@@ -1,0 +1,165 @@
+.formContainer {
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 48px;
+  width: auto;
+  min-width: 748px;
+  max-width: 1189px;
+  min-height: 700px;
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.logoOval {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 50px;
+
+  img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.title {
+  font-family: $font-epilogue;
+  font-size: 32px;
+  font-weight: bold;
+  color: $black-100;
+  text-align: center;
+  margin: 0 0 24px 0;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-family: $font-roboto;
+  font-size: 18px;
+  color: $gray-light;
+  text-align: center;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+}
+
+.formField {
+  margin-bottom: 32px;
+  max-width: 589px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.formFieldsContainer {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.leftColumn,
+.rightColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftColumn .formField,
+.rightColumn .formField {
+  margin-bottom: 24px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+.buttonFixed {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% - 80px);
+  padding-bottom: 0;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    min-width: auto;
+    max-width: auto;
+    min-height: 571px;
+    padding: 32px 24px;
+    margin: 20px auto;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .formFieldsContainer {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .leftColumn .formField,
+  .rightColumn .formField {
+    margin-bottom: 20px;
+  }
+
+  .buttonFixed {
+    right: 24px;
+    bottom: 24px;
+    width: calc(100% - 48px);
+  }
+
+  .buttonContainer {
+    justify-content: center;
+  }
+}
+
+// Google info message styles
+.googleInfo {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px auto;
+  max-width: 589px;
+  width: 100%;
+
+  p {
+    color: #1d4ed8;
+    font-family: $font-roboto;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+    text-align: center;
+  }
+}

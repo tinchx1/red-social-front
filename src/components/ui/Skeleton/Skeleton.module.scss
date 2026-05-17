@@ -1,0 +1,38 @@
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  display: block;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.default {
+  border-radius: 4px;
+}
+
+.text {
+  border-radius: 4px;
+  height: 1em;
+  margin-bottom: 0.5em;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+.rectangular {
+  border-radius: 0;
+}
+

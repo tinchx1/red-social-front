@@ -1,0 +1,284 @@
+.button {
+  font-family: $font-roboto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 8px 20px;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  outline: none;
+  box-sizing: border-box;
+  background-color: $blue-500;
+  color: $white-50;
+  border-color: $blue-500;
+  height: 40px;
+}
+
+.button:hover:not(:disabled) {
+  background-color: $blue-400;
+  border-color: $white-50;
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 0 2px $blue-200;
+}
+
+.button:active:not(:disabled) {
+  background-color: $blue-800;
+  border-color: $white-50;
+  transform: translateY(1px);
+}
+
+.button:disabled {
+  background-color: $white-800;
+  color: $white-50;
+  border-color: $white-800;
+  opacity: 1;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.button--secondary {
+  background-color: $white-500;
+  color: $blue-500;
+  border-color: $white-500;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background-color: $white-300;
+  border-color: $white-50;
+}
+
+.button--secondary:focus-visible {
+  box-shadow: 0 0 0 2px $white-500;
+}
+
+.button--secondary:active:not(:disabled) {
+  background-color: $white-500;
+  border-color: $white-50;
+}
+
+.button--secondary:disabled {
+  background-color: $white-800;
+  color: $white-50;
+  border-color: $white-800;
+}
+
+.button--outline {
+  background-color: transparent;
+  color: $blue-500;
+  border-color: $blue-500;
+}
+
+.button--outline:hover:not(:disabled) {
+  background-color: $blue-50;
+  border-color: $blue-400;
+}
+
+.button--outline:focus-visible {
+  box-shadow: 0 0 0 2px $blue-200;
+}
+
+.button--outline:active:not(:disabled) {
+  background-color: $blue-100;
+  border-color: $blue-600;
+}
+
+.button--outline:disabled {
+  background-color: transparent;
+  color: $white-800;
+  border-color: $white-800;
+}
+
+.button--ghost {
+  background-color: transparent;
+  color: $blue-500;
+  border-color: transparent;
+}
+
+.button--ghost:hover:not(:disabled) {
+  background-color: $blue-50;
+  border-color: transparent;
+}
+
+// Link-style button (used for cancel actions)
+.button--link {
+  background-color: transparent;
+  color: $blue-500;
+  border-color: transparent;
+  text-decoration: none;
+}
+
+.button--link:hover:not(:disabled) {
+  background-color: $white-100;
+  color: $blue-400;
+  border-color: transparent;
+}
+
+.button--link:focus-visible {
+  box-shadow: 0 0 0 2px $blue-200;
+}
+
+.button--link:active:not(:disabled) {
+  background-color: $white-200;
+}
+
+.button--ghost:focus-visible {
+  box-shadow: 0 0 0 2px $blue-200;
+}
+
+.button--ghost:active:not(:disabled) {
+  background-color: $blue-100;
+  border-color: transparent;
+}
+
+.button--ghost:disabled {
+  background-color: transparent;
+  color: $white-800;
+  border-color: transparent;
+}
+
+.button--icon {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: $white-800;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.button--icon:hover:not(:disabled) {
+  background: $white-200;
+  border-radius: 50%;
+}
+
+.button--light-blue {
+  background-color: $blue-50;
+  color: $blue-500;
+  border: none;
+}
+
+.button--light-blue:hover:not(:disabled) {
+  background-color: $blue-100;
+}
+
+.button--light-blue:focus-visible {
+  box-shadow: 0 0 0 2px $blue-200;
+}
+
+.button--light-blue:active:not(:disabled) {
+  background-color: $blue-200;
+  border-color: $blue-600;
+}
+
+.button--light-blue:disabled {
+  background-color: $white-800;
+  color: $white-50;
+  border-color: $white-800;
+}
+
+.button--rounded-small {
+  border-radius: 6px;
+}
+
+.button--rounded-xmedium {
+  border-radius: 10px;
+}
+
+.button--rounded-medium {
+  border-radius: 12px;
+}
+
+.button--rounded-large {
+  border-radius: 20px;
+}
+
+.button--rounded-full {
+  border-radius: 9999px;
+}
+
+.button--icon-only {
+  padding: 4px 12px;
+  width: auto;
+  min-width: auto;
+  aspect-ratio: 1;
+}
+
+.button--icon-only.button--rounded-none {
+  border-radius: 8px;
+}
+
+.button--icon-only.button--rounded-small {
+  border-radius: 6px;
+}
+
+.button--icon-only.button--rounded-medium {
+  border-radius: 8px;
+}
+
+.button--icon-only.button--rounded-large {
+  border-radius: 12px;
+}
+
+.button--icon-only.button--rounded-full {
+  border-radius: 50%;
+}
+
+.button--size-sm {
+  height: 32px;
+  min-width: 32px;
+  padding: 0 12px;
+}
+
+.button--size-xs {
+  height: 28px;
+  width: 28px;
+  min-width: 28px;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.button--animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    font-size: 14px;
+    padding: 8px 16px;
+    gap: 6px;
+    height: 40px;
+  }
+
+  .button--icon-only {
+    padding: 8px;
+  }
+}

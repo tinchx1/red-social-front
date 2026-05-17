@@ -1,0 +1,401 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($black, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+
+.modal {
+  width: min(1200px, 96vw);
+  height: min(750px, 85vh);
+  background: $white-50;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba($black, 0.2);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @media (max-width: 1224px) {
+    width: 800px;
+    height: auto;
+    max-height: 90vh;
+    overflow: visible;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  @media (max-width: 1224px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+}
+
+.headerButtons {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 12px;
+  @media (max-width: 1224px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.previewButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: $white-100;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  color: $dark-blue;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $white-200;
+  }
+
+  &:active {
+    background: $white-300;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 1224px) {
+    display: flex;
+  }
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  color: $dark-blue;
+  margin-bottom: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: $black;
+  font-family: Epilogue;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 37px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  @media (max-width: 1224px) {
+    font-family: Epilogue;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.closeButton {
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  color: $black-200;
+  cursor: pointer;
+  background: none;
+  &:hover {
+    background: $white-200;
+  }
+}
+
+.body {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+  overflow: hidden;
+  flex: 1;
+  @media (max-width: 1224px) {
+    overflow-y: auto;
+  }
+}
+
+.infoColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 50%;
+  @media (max-width: 1224px) {
+    max-width: 100%;
+  }
+}
+
+.infoGroup {
+  background: $white-100;
+  border-radius: 8px;
+  padding: 20px;
+  color: #1a1a1a;
+}
+
+.infoTitle {
+  margin: 0 0 16px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.fieldsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #1a1a1a;
+}
+
+.fieldValue {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #1a1a1a;
+}
+
+.receiptCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: #f2f2f2;
+  border: 1px solid $white-500;
+  border-radius: 8px;
+  padding: 13px 16px;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  max-width: 338px;
+  font-family: inherit;
+  font-size: inherit;
+
+  &:hover {
+    background-color: $white-400;
+  }
+
+  &:active {
+    background-color: $white-500;
+  }
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.fileNameWeight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+
+  p {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    color: $dark-blue;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  h6 {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    color: #66666666;
+    margin: 0;
+  }
+}
+
+.previewColumn {
+  width: 50%;
+  background: $blue-50;
+  border-radius: 16px;
+  border: 1px solid $white-300;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.previewTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: $dark-blue;
+}
+
+.previewTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.previewTab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background: $blue-50;
+  color: $title-dark;
+  font-weight: 600;
+  text-wrap: nowrap;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  border: none;
+
+  &:hover {
+    background: $blue-100;
+  }
+}
+
+.previewTabActive {
+  background: $blue-500;
+  color: $white-50;
+
+  &:hover {
+    background: $blue-600;
+  }
+}
+
+.previewSurface {
+  flex: 1;
+  border-radius: 12px;
+  background: $white-50;
+  padding: 12px;
+  min-height: 0;
+  overflow-x: hidden;
+}
+
+.desktopPreviewScaled {
+  transform: scale(0.7);
+  transform-origin: top left;
+  width: 800px;
+  overflow-x: hidden;
+@media (max-height: 730px) {
+    transform: scale(0.55);
+    transform-origin: top left;
+    width: 1069px;
+  }
+}
+
+.mobilePreviewScaled {
+}
+@media (max-width: 1224px) {
+  .modal {
+    padding: 24px;
+  }
+
+  .body {
+    flex-direction: column;
+  }
+
+  .previewColumn {
+    display: none;
+  }
+}
+
+.mobilePreviewContainer {
+  padding: 16px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 640px) {
+  .overlay {
+    padding: 16px;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  .header {
+    justify-content: flex-start;
+  }
+
+  .headerActions {
+    justify-content: flex-end;
+    flex: 1;
+  }
+}

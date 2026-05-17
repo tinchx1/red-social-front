@@ -1,0 +1,396 @@
+.container {
+  max-width: 1620px;
+  padding: 24px 16px;
+}
+
+.titleContainer {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1200px) {
+  .titleContainer {
+    display: none;
+  }
+}
+
+.title {
+  font-size: 37px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  font-family: $font-epilogue;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 24px;
+  margin-bottom: 32px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  justify-content: space-between;
+}
+
+.toggleLabel {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.leftColumn,
+.rightColumn,
+.thirdColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.thirdColumn {
+  @media (max-width: 1200px) {
+    margin-bottom: 32px;
+  }
+}
+
+.card {
+  background: $white-50;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 120%;
+  color: #1a1a1a;
+  margin: 0 0 20px;
+  font-family: $font-roboto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.label {
+  font-weight: 600;
+  font-size: 14px;
+  color: $black-100;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: $gray-900;
+  background: $white-50;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+  height: 40px;
+
+  &:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+
+  &.inputError {
+    border-color: $red;
+  }
+
+  &::placeholder {
+    color: $gray-light;
+  }
+}
+
+.error {
+  font-family: $font-roboto;
+  font-size: 12px;
+  color: $red;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.fileUpload {
+  position: relative;
+  height: 82px;
+}
+
+.fileInput {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.fileLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #f8f9fa;
+  border: 1px dashed #ccc;
+  height: 82px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: $gray-light;
+  gap: 8px;
+
+  &:hover {
+    background-color: #e9ecef;
+    border-color: #3498db;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: $gray-light;
+  }
+}
+
+.helpText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: $white-900;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.preview {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fileName {
+  font-size: 14px;
+  color: $white-900;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.removeButton {
+  padding: 6px 12px;
+  background-color: transparent;
+  color: $red;
+  border: 1px solid $red;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  align-self: flex-start;
+
+  &:hover {
+    background-color: $red;
+    color: $white-50;
+  }
+}
+
+.uploadedImage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: $white-100;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.uploadedText {
+  font-size: 14px;
+  color: $white-900;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progressBar {
+  flex: 1;
+  height: 4px;
+  background: $white-300;
+  border-radius: 2px;
+  overflow: hidden;
+  min-width: 100px;
+}
+
+.progressFill {
+  height: 100%;
+  width: 75%;
+  background: $blue-500;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.removeButtonSmall {
+  padding: 4px 8px;
+  background-color: transparent;
+  color: $red;
+  border: 1px solid $red;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $red;
+    color: $white-50;
+  }
+}
+
+.supportBox {
+  background: $blue-50;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.supportText {
+  font-size: 18px;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.supportLink {
+  color: $blue-500;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.deleteButton {
+  padding: 12px 24px;
+  background-color: $white-500;
+  color: #ff383c;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: flex-end;
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 16px;
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .actionButtons {
+    flex-direction: column-reverse;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.toggleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggleContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.helpText {
+  background: $blue-50;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: $title-dark;
+  text-align: lzeft;
+  margin-top: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 8px;
+
+  span {
+    font-weight: 500;
+  }
+}

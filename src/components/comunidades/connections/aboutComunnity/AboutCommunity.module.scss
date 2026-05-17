@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: $white-50;
+  border-radius: 12px;
+  overflow: hidden;
+  width: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid $white-300;
+  margin-bottom: 30px;
+  font-family: $font-roboto;
+
+  font-weight: 500;
+  color: $black-100;
+  margin: 0 0 4px 0;
+  padding: 20px;
+  gap: 20px;
+  @media (max-width: 1440px) {
+    display: none;
+  }
+}
+
+.title {
+  display: flex;
+  font-size: 22px;
+}
+
+.description {
+  font-size: 14px;
+  color: $white-800;
+}

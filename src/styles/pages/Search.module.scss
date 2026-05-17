@@ -1,0 +1,110 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+  gap: 16px;
+  padding: 16px;
+  min-height: calc(100vh - 60px);
+  margin-top: 25px;
+
+  @media (max-width: 1600px) {
+    max-width: 100%;
+    grid-template-columns: 1fr 600px 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  @media (max-width: 1400px) {
+    max-width: 100%;
+    grid-template-columns: 1fr 600px 1fr;
+    gap: 12px;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 1300px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    max-width: 600px;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 8px;
+    gap: 8px;
+  }
+}
+
+.recommendations {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border: none;
+}
+.leftSidebar {
+  grid-column: 1;
+  justify-self: end;
+  width: 257px;
+
+  @media (max-width: 1300px) {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: stretch;
+    width: auto;
+  }
+}
+
+.mainContent {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (max-width: 1300px) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.rightSidebar {
+  grid-column: 3;
+  justify-self: start;
+  width: 424px;
+
+  @media (max-width: 1300px) {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: stretch;
+    width: auto;
+  }
+}
+
+/* Visibility utilities */
+.showDesktop {
+  display: block;
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
+}
+
+.showMobile {
+  display: none;
+
+  @media (max-width: 1300px) {
+    display: block;
+  }
+}
+
+.volverButton {
+  display: block;
+  @media (max-width: 1300px) {
+    display: none;
+  }
+}
+
+@media (max-width: 1201px) {
+  .container {
+    margin-top: 5px;
+  }
+}

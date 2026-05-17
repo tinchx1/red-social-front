@@ -1,0 +1,10 @@
+export { default as Hero } from "./Hero/Hero";
+export { default as Question } from "./Question/Question";
+export { default as CallToAction } from "./CallToAction/CallToAction";
+export { default as Footer } from "./Footer/Footer";
+export { default as CompanyCard } from "./CompanyCard/CompanyCard";
+export { default as CompaniesCarousel } from "./CompaniesCarousel/CompaniesCarousel";
+export { default as CompaniesLogosCarousel } from "./CompaniesLogosCarousel/CompaniesLogosCarousel";
+export { default as ConsultFormModal } from "./ConsultFormModal/ConsultFormModal";
+export { default as ConsultModalRoot } from "./ConsultModalRoot/ConsultModalRoot";
+export { default as ConsultButton } from "./ConsultButton/ConsultButton";

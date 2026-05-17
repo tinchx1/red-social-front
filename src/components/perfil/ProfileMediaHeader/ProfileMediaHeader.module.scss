@@ -1,0 +1,121 @@
+
+.coverImage {
+  /* Responsive height: never too small or too tall */
+  height: clamp(120px, 22vw, 220px);
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  overflow: visible;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.banner {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.plainBanner {
+  width: 100%;
+  height: 100%;
+  background: $blue-500;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.avatarContainer {
+  position: absolute;
+  bottom: -40px;
+  left: 40px;
+  background: $white-50;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  height: 120px;
+  
+  @media (max-width: 768px) {
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    bottom: -30px;
+  }
+  
+  @media (max-width: 480px) {
+    left: 16px;
+    width: 80px;
+    height: 80px;
+    bottom: -25px;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarEditButton {
+  position: absolute;
+  right: -4px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: $white-50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 28px;
+    right: -2px;
+    top: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 24px;
+    height: 24px;
+    right: -1px;
+    top: 6px;
+  }
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.bannerEditButton {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: $white-50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+    right: 8px;
+    top: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 28px;
+    height: 28px;
+    right: 6px;
+    top: 6px;
+  }
+}

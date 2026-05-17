@@ -1,0 +1,80 @@
+.container {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  padding: 16px;
+  min-height: calc(100vh - 190px);
+  max-width: 1265px;
+  margin: 25px auto 0;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+.leftSidebar {
+  grid-column: 1;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 2;
+    display: none;
+    div {
+      button {
+        display: none;
+      }
+    }
+  }
+}
+
+.inConfig {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.mainContent {
+  grid-column: 2;
+  width: 100%;
+  border-radius: 12px;
+  padding: 32px;
+  padding-top: 0;
+  height: fit-content;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 1;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+}
+
+.title {
+  font-family: $font-epilogue;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: $black;
+  margin: 0 0 16px;
+
+  @media (min-width: 1200px) {
+    font-weight: 700;
+    font-size: 37px;
+    text-transform: none;
+    margin: 0 0 24px;
+  }
+}
+
+.hideTablet {
+  display: block;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}

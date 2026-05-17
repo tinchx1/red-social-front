@@ -1,0 +1,167 @@
+.feedContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedHeader {
+  background: $white-50;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userPrompt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.promptButton {
+  flex: 1;
+  padding: 12px 16px;
+  background: $white-200;
+  border: 1px solid $white-400;
+  border-radius: 24px;
+  font-family: $font-roboto;
+  font-size: 15px;
+  color: $white-800;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  &:hover {
+    background: $white-300;
+    border-color: $white-500;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.postsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.postsTitle {
+  font-weight: 600;
+  color: $black-100;
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+}
+
+.infiniteScrollTrigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.loadingIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  
+  span {
+    font-family: $font-roboto;
+    font-size: 14px;
+    color: #a3a3a3;
+    font-weight: 400;
+  }
+}
+
+.noMorePosts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  
+  span {
+    font-family: $font-roboto;
+    font-size: 14px;
+    color: #a3a3a3;
+    font-weight: 400;
+  }
+}
+
+
+.loadingContainer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100px;
+  color: $white-800;
+  gap: 12px;
+}
+
+.noPosts {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100px;
+  color: $white-800;
+}
+
+.joinRequired {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: $white-50;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.joinIcon {
+  width: 28px;
+  height: 28px;
+  color: $blue-600;
+}
+
+.joinCopy {
+  display: flex;
+  flex-direction: column;
+}
+
+.joinTitle {
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: $black-100;
+}
+
+.joinSubtitle {
+  margin: 0;
+  color: $white-700;
+}
+
+@media (max-width: 680px) {
+  .feedHeader {
+    display: none;
+  }
+  .postsContainer {
+    padding-top: 16px;
+  }
+} 

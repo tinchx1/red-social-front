@@ -1,0 +1,32 @@
+.editarContainer {
+  padding: 12px 16px;
+  background: $white-50;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+}
+
+.opcionesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.opcionItem {
+  cursor: pointer;
+  padding: 12px 0;
+}
+
+.opcionLabel {
+  color: $title-dark;
+}
+
+.divider {
+  height: 1px;
+  background: $white-300;
+}
+
+@media (max-width: 1200px) {
+  .editarContainer {
+    display: none;
+  }
+}
+

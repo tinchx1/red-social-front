@@ -1,0 +1,656 @@
+// Estilos para la sección de comentarios
+.commentsSection {
+  margin-top: 0px;
+  padding-top: 16px;
+  padding-inline: 20px;
+}
+
+.commentForm {
+  margin-bottom: 16px;
+}
+
+.replyForm {
+  margin-top: 12px;
+  padding: 12px;
+  background: $white-50;
+  border-radius: 8px;
+  border: 1px solid $white-300;
+  margin-left: -36px;
+}
+
+.replyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.replyingToText {
+  font-family: $font-roboto;
+  font-size: 13px;
+  color: $white-800;
+  font-weight: 500;
+}
+
+.cancelReplyBtn {
+  background: none;
+  border: none;
+  color: $white-600;
+  font-family: $font-roboto;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  &:hover {
+    background: $white-200;
+    color: $black-200;
+  }
+}
+
+.commentInputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  align-items: center;
+}
+
+.commentInput {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid $white-300;
+  border-radius: 20px;
+  background: $white-50;
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $black-200;
+
+  &:focus {
+    outline: none;
+    border-color: $blue-500;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+  }
+
+  &::placeholder {
+    color: $white-800;
+  }
+}
+
+.commentSubmitBtn {
+  padding: 8px 16px;
+  background: $blue-500;
+  color: $white-50;
+  border: none;
+  border-radius: 16px;
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: $blue-600;
+  }
+
+  &:disabled {
+    background: $white-400;
+    cursor: not-allowed;
+  }
+}
+
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment {
+  padding: 12px;
+  border-radius: 8px;
+  position: relative;
+  padding-left: 36px;
+}
+
+.commentHeader {
+  position: relative;
+}
+
+// Options (MoreVertical) button styles for comments
+.optionsContainer {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.optionsButton {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $white-200;
+  }
+
+  &:active {
+    background-color: $white-300;
+  }
+}
+
+.commentAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: -36px;
+}
+
+.commentInfo {
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.commentMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.commentAuthor {
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 600;
+  color: $black-100;
+}
+
+.commentTimestamp {
+  font-family: $font-roboto;
+  font-size: 12px;
+  color: $white-800;
+}
+
+.commentDate {
+  font-family: $font-roboto;
+  font-size: 12px;
+  color: $white-800;
+}
+
+.commentContent {
+  font-family: $font-roboto;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $black-200;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.commentTextCollapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.commentExpandBtn {
+  font-family: $font-roboto;
+  text-align: left;
+  background: none;
+  border: none;
+  color: $blue-500;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+  font-size: inherit;
+  margin-top: 4px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.commentActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.commentActionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: $dark-blue;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: $font-roboto;
+
+  &:hover {
+    background-color: $blue-50;
+    color: $blue-500;
+  }
+
+  &.liked {
+    background-color: $blue-50;
+    color: $blue-500;
+
+    &:hover {
+      background-color: $blue-100;
+    }
+
+    &:active {
+      background-color: $blue-200;
+    }
+  }
+
+  &:active {
+    background-color: $blue-100;
+  }
+}
+
+// Estados de carga y mensajes
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.loadingText {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $white-800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loadMoreBtn {
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 12px;
+  background: transparent;
+  color: $blue-500;
+  border: 1px solid $blue-500;
+  border-radius: 8px;
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: $blue-500;
+    color: $white-50;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.noCommentsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.noCommentsText {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $white-800;
+  text-align: center;
+}
+
+// Estilos para respuestas (replies)
+.repliesSection {
+  margin-top: 12px;
+  padding-left: 22px;
+  border-left: 1.2px solid $white-600;
+}
+
+.showRepliesBtn {
+  background: none;
+  border: none;
+  color: $blue-500;
+  font-family: $font-roboto;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-bottom: 8px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.repliesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reply {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: $white-50;
+  position: relative;
+  padding-left: 20px;
+}
+
+.replyHeader {
+  position: relative;
+}
+
+.replyAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: -32px;
+}
+
+.replyInfo {
+  padding-left: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.replyMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.replyAuthor {
+  font-family: $font-roboto;
+  font-size: 13px;
+  font-weight: 600;
+  color: $black-100;
+}
+
+.replyDate {
+  font-family: $font-roboto;
+  font-size: 12px;
+  color: $white-800;
+}
+
+.replyContent {
+  font-family: $font-roboto;
+  font-size: 13px;
+  line-height: 1.4;
+  color: $black-200;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.replyActions {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: -10px;
+  gap: 6px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.replyActionBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: $dark-blue;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: $font-roboto;
+
+  &:hover {
+    background-color: $blue-50;
+    color: $blue-500;
+  }
+
+  &.liked {
+    background-color: $blue-50;
+    color: $blue-500;
+
+    &:hover {
+      background-color: $blue-100;
+    }
+
+    &:active {
+      background-color: $blue-200;
+    }
+  }
+
+  &:active {
+    background-color: $blue-100;
+  }
+}
+
+.loadMoreRepliesBtn {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 8px;
+  background: transparent;
+  color: $blue-500;
+  border: 1px solid $blue-500;
+  border-radius: 6px;
+  font-family: $font-roboto;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: $blue-500;
+    color: $white-50;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 768px) {
+  // Estilos móviles para comentarios
+  .commentsSection {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .commentForm {
+    margin-bottom: 12px;
+  }
+
+  .replyForm {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .replyHeader {
+    margin-bottom: 6px;
+  }
+
+  .replyingToText {
+    font-size: 12px;
+  }
+
+  .cancelReplyBtn {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .commentInputContainer {
+    gap: 6px;
+  }
+
+  .commentInput {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 16px;
+  }
+
+  .commentSubmitBtn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 14px;
+  }
+
+  .comment {
+    padding: 10px;
+    padding-left: 40px;
+  }
+
+  .commentAvatar {
+    width: 28px;
+    height: 28px;
+    left: -32px;
+  }
+
+  .commentAuthor {
+    font-size: 13px;
+  }
+
+  .commentDate {
+    font-size: 10px;
+  }
+
+  .commentTimestamp {
+    font-size: 11px;
+  }
+
+  .commentContent {
+    font-size: 13px;
+  }
+
+  .commentExpandBtn {
+    font-size: 13px;
+    margin-top: 3px;
+  }
+
+  .commentActions {
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .commentActionBtn {
+    padding: 5px 8px;
+    font-size: 12px;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .loadingContainer {
+    padding: 16px;
+  }
+
+  .loadingText {
+    font-size: 13px;
+  }
+
+  .loadMoreBtn {
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .noCommentsContainer {
+    padding: 20px;
+  }
+
+  .noCommentsText {
+    font-size: 13px;
+  }
+
+  // Estilos móviles para respuestas
+  .repliesSection {
+    margin-top: 10px;
+    padding-left: 12px;
+  }
+
+  .showRepliesBtn {
+    font-size: 12px;
+    padding: 3px 0;
+    margin-bottom: 6px;
+  }
+
+  .reply {
+    padding: 6px 10px;
+    padding-left: 32px;
+  }
+
+  .replyAvatar {
+    width: 20px;
+    height: 20px;
+    left: -24px;
+  }
+
+  .replyAuthor {
+    font-size: 12px;
+  }
+
+  .replyDate {
+    font-size: 13px;
+  }
+
+  .replyContent {
+    font-size: 12px;
+  }
+
+  .replyActions {
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .replyActionBtn {
+    padding: 3px 6px;
+    font-size: 11px;
+    gap: 3px;
+  }
+
+  .loadMoreRepliesBtn {
+    padding: 6px 10px;
+    margin-top: 6px;
+    font-size: 11px;
+  }
+}

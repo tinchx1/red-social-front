@@ -1,0 +1,75 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.imageUploadHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.imageUploadContainer {
+  position: relative;
+}
+
+.imageUploadInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.imageUploadArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 24px;
+  background: $white-100;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  min-height: 475px;
+
+  &:hover {
+    background: $white-300;
+    border-color: $white-400;
+  }
+
+  &:active {
+    background: $white-300;
+  }
+  @media (max-width: 720px) {
+    min-height: 343px;
+  }
+}
+
+.imageUploadIcon {
+  color: #101f2a;
+  flex-shrink: 0;
+}
+
+.imageUploadNote {
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 400;
+  color: $white-800;
+  max-width: 272px;
+  text-align: center;
+  gap: 12px;
+}
+.imageUploadNoteSmall {
+  font-size: 12px;
+  @media (min-width: 720px) {
+    display: none;
+  }
+}

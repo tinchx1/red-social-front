@@ -1,0 +1,11 @@
+export { default as FooterAuth } from "./FooterAuth";
+export { AuthProvider } from "./AuthProvider";
+export { default as FooterMobile } from "./FooterMobile/FooterMobile";
+export { default as NavbarMobile } from "./NavbarMobile/NavbarMobile";
+export { default as NavbarDesktop } from "./NavbarDesktop/NavbarDesktop";
+export { default as ProfileModal } from "./ProfileModal/ProfileModal";
+export { default as LogoutModal } from "./LogoutModal/LogoutModal";
+export { default as UserProfile } from "./UserProfile/UserProfile";
+export { default as NotificationBell } from "./NotificationBell/NotificationBell";
+export { default as BadgePlan } from "./BadgePlan/BadgePlan";
+export { default as Providers } from "./Providers/Providers";

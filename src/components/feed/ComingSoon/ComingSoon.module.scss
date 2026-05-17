@@ -1,0 +1,135 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+
+  @media (max-width: 1201px) {
+    margin-top: 45px;
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 720px;
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  text-align: center;
+
+  @media (max-width: 600px) {
+    padding: 20px;
+  }
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $blue-50;
+  border: 1px solid $white-300;
+  margin-bottom: 16px;
+
+  img, svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.title {
+  font-family: $font-roboto;
+  font-size: 24px;
+  font-weight: 700;
+  color: $black-100;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-family: $font-roboto;
+  font-size: 16px;
+  color: $white-800;
+  margin: 0 0 12px 0;
+}
+
+.hint {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $white-700;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+  min-height: calc(100vh - 165px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 55px;
+
+  @media (max-width: 1201px) {
+    margin-top: 45px;
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 720px;
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  text-align: center;
+
+  @media (max-width: 600px) {
+    padding: 20px;
+  }
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $blue-50;
+  border: 1px solid $white-300;
+  margin-bottom: 16px;
+
+  img, svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.title {
+  font-family: $font-roboto;
+  font-size: 24px;
+  font-weight: 700;
+  color: $black-100;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-family: $font-roboto;
+  font-size: 16px;
+  color: $white-800;
+  margin: 0 0 12px 0;
+}
+
+.hint {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $white-700;
+}
+

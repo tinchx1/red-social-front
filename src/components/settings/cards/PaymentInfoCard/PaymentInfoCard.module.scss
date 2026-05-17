@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: $font-roboto;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 120%;
+  color: $black-100;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: $black-100;
+}
+
+.value {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: $gray-light;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.block {
+  margin-top: 6px;
+}
+
+.actionBtn {
+  padding-left: 14px;
+  padding-right: 14px;
+  width: 100%;
+  justify-content: center;
+}
+
+.mobileFooter {
+  margin-top: 6px;
+}
+
+@media (min-width: 1200px) {
+  .actionBtn {
+    width: auto;
+  }
+}

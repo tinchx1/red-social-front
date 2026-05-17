@@ -1,0 +1,788 @@
+.infoContainer {
+  background: $white-50;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.content {
+  padding: 24px 40px;
+
+  @media (max-width: 768px) {
+    padding: 20px 24px;
+    padding-top: 0px !important;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px 20px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 25px;
+    gap: 8px;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: $title-dark;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+      gap: 6px;
+    }
+  }
+}
+
+.verifiedBadge {
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  img {
+    width: 20px;
+    height: 20px;
+
+    @media (max-width: 480px) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.descriptionSection {
+  margin-bottom: 8px;
+}
+
+.bioInput {
+  width: 100%;
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  color: $white-900;
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: $blue-500;
+  }
+
+  &::placeholder {
+    color: $white-600;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 10px;
+    min-height: 60px;
+  }
+}
+
+.description {
+  font-size: 16px;
+  color: $white-900;
+  margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.addressSection {
+  margin-bottom: 14px;
+  color: $white-700;
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+}
+
+.addressInput {
+  width: 100%;
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: $white-800;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: $blue-500;
+  }
+
+  &::placeholder {
+    color: $white-600;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+.address {
+  font-size: 14px;
+  color: $white-800;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: $white-900;
+  // flex-wrap: wrap;
+
+  span:not(.contactLabel),
+  a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  > div {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  @media (max-width: 768px) {
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 480px) {
+    gap: 8px;
+
+    // Ensure values occupy full width on very small screens
+    > div,
+    > a,
+    > span:not(.contactLabel) {
+      width: 100%;
+    }
+  }
+}
+
+.contactLabel {
+  font-weight: 500;
+  // keep a consistent label column to avoid jumps when toggling edit mode
+  flex: 0 0 130px;
+  min-width: 130px;
+  align-self: flex-start;
+  font-size: 12px;
+  color: $white-700; // unify label color across sections
+  letter-spacing: 0.5px;
+  margin: auto 0;
+  @media (max-width: 480px) {
+    // on very small screens, allow the label to flow naturally
+    flex: 0 0 auto;
+    min-width: auto;
+    font-size: 13px;
+  }
+}
+.contactsCount {
+  font-size: 13px;
+  color: $title-dark;
+  letter-spacing: 0.5px;
+  margin: auto 0;
+  font-weight: 400;
+}
+.contactValue {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1;
+  gap: 12px;
+}
+
+.contactButton {
+  flex-shrink: 0;
+}
+
+.contactInput {
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: $blue-600;
+  outline: none;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: $blue-500;
+  }
+
+  &::placeholder {
+    color: $white-600;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    width: 100%;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+.addressInputs {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  max-width: 400px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 8px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    gap: 6px;
+  }
+}
+
+.addressField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.addressLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: $white-700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  @media (max-width: 768px) {
+    font-size: 11px;
+  }
+}
+
+.addressInputs .contactInput {
+  max-width: none;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.contactInfo {
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+  @media (max-width: 480px) {
+    gap: 10px;
+  }
+
+  p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: $white-900;
+
+    span,
+    a {
+      color: $blue-600;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 13px;
+    }
+  }
+  // Ensure standalone links (e.g., Web) are blue
+  .contactRow a {
+    color: $blue-600;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.isEditing {
+  .contactInfo {
+    margin: 4px 0;
+  }
+
+  // keep rows aligned in edit mode to prevent label/value jump
+  .contactRow {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    @media (max-width: 768px) {
+      gap: 6px;
+    }
+
+    // only stack on very small screens
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+}
+
+@media (min-width: 780px) {
+  .isEditing {
+    .interestRow {
+      gap: 8px;
+    }
+  }
+}
+
+.editButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.interestRow {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 8px;
+  justify-content: flex-end;
+  .interestHeaderText {
+    font-size: 14px;
+    color: $white-900;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-top: 2px;
+    gap: 12px;
+    @media (max-width: 768px) {
+      font-size: 13px;
+      margin-top: 6px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.interestTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+
+  @media (max-width: 480px) {
+    gap: 6px;
+  }
+}
+
+.interestTag {
+  background: $blue-500;
+  color: $white-50;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  height: 24px;
+  img {
+    width: 12px;
+    height: 12px;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    padding: 5px 10px;
+    font-size: 11px;
+    gap: 4px;
+
+    img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 4px 8px;
+    font-size: 10px;
+
+    img {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+.selected {
+  background: $blue-500;
+  color: $white-50;
+}
+
+.available {
+  background: $white-200;
+  color: $white-700;
+  border: 1px solid $white-300;
+
+  &:hover {
+    background: $white-300;
+    border-color: $white-400;
+  }
+}
+
+.nameInputs {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    gap: 6px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.nameInputGroup {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+
+  @media (max-width: 768px) {
+    gap: 6px;
+  }
+  @media (max-width: 480px) {
+    gap: 6px;
+  }
+}
+
+.inputError {
+  border-color: #ff0000 !important;
+}
+
+.errorText {
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.inputLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: $white-700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nameInput {
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: $title-dark;
+  outline: none;
+  transition: border-color 0.2s;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+
+  &:focus {
+    border-color: $blue-500;
+  }
+
+  &::placeholder {
+    color: $white-600;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    padding: 6px 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+}
+// removed duplicate .contactLabel that caused style jumps
+.editActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid $white-200;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+    padding-top: 16px;
+  }
+}
+
+.saveButton {
+  background: $blue-500;
+  color: $white-50;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover:not(:disabled) {
+    background: $blue-600;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+.cancelButton {
+  background: transparent;
+  color: $blue-500;
+  border: 1px solid $white-300;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover:not(:disabled) {
+    background: $white-100;
+    border-color: $white-400;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 16px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 8px;
+  }
+}
+
+.editButtons {
+  height: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 6px;
+  }
+}
+
+.editIcon,
+.cancelIcon {
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  filter: brightness(0);
+
+  @media (max-width: 768px) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (max-width: 480px) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Additional responsive improvements for editing mode
+@media (max-width: 768px) {
+  .content {
+    .header {
+      h1 {
+        .nameInputs {
+          .nameInput {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    .header {
+      h1 {
+        .nameInputs {
+          .nameInput {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .interestRow {
+    .interestHeaderText {
+      font-size: 12px;
+    }
+  }
+
+  .contactRow {
+    font-size: 12px;
+
+    .contactLabel {
+      font-size: 12px;
+    }
+  }
+}
+
+// Keep label/value alignment consistent only between 481px and 768px to avoid jumps on small screens
+@media (min-width: 481px) and (max-width: 768px) {
+  .contactRow {
+    // two-column effect: fixed label, flexible value
+    .contactLabel {
+      flex: 0 0 110px; // fixed label column
+      min-width: 110px;
+    }
+
+    > span:not(.contactLabel),
+    > a,
+    > div {
+      flex: 1 1 auto; // value column
+      min-width: 0; // allow wrapping inside
+    }
+  }
+
+  // Apply same alignment to Interests row}
+  .interestRow {
+    align-items: flex-start;
+    .contactLabel {
+      flex: 0 0 120px;
+      min-width: 120px;
+    }
+    .interestTags {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+}

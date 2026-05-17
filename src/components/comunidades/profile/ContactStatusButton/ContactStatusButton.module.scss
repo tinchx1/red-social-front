@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pillPrimary {
+  background: $blue-50;
+  color: $blue-700;
+  border: 1px solid $blue-200;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.pillNeutral {
+  background: $white-50;
+  color: $gray-700;
+  border: 1px solid $white-400;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.modalText {
+  font-size: 16px;
+  font-weight: 500;
+  color: $white-900;
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+}
+
+.modalButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.modalIconWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.modalIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.leaveButton {
+  order: 1;
+}
+
+.cancelButton {
+  order: 2;
+}
+
+

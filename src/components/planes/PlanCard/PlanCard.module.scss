@@ -1,0 +1,122 @@
+.card {
+  background: $blue-50;
+  border-radius: 34.25px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  max-width: 372px;
+  max-height: 440px;
+  align-self: center;
+  width: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $blue-500;
+}
+
+.title {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 18.4px;
+  line-height: 1.2;
+  color: $blue-900;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+}
+
+.price {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 33.45px;
+  line-height: 1;
+  font-style: Bold;
+  color: $blue-900;
+  margin: 0;
+}
+
+.month {
+  font-family: $font-roboto;
+  font-weight: 500;
+  font-size: 13.38px;
+  line-height: 1;
+  color: $blue-900;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.feature {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: $blue-500;
+}
+.beforePrice {
+  color: $blue-900;
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+.beforePriceValue {
+  text-decoration: line-through;
+}
+.xIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: $black;
+}
+
+.featureName {
+  font-family: $font-roboto;
+  font-weight: 500;
+  font-size: 14px;
+  color: $blue-900;
+  line-height: 1.2;
+}
+
+.subscribeButton {
+  width: 100%;
+  margin-top: auto;
+  height: 44px !important;
+  font-size: 18.4px !important;
+  &:hover {
+    border-color: $blue-400 !important;
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+  }
+  &:disabled {
+    background-color: $blue-100 !important;
+    color: $blue-400 !important;
+    border-color: $blue-100 !important;
+  }
+}

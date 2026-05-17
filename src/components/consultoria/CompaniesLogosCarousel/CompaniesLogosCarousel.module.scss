@@ -1,0 +1,27 @@
+.marqueeWrap {
+  width: 100%;
+  overflow: hidden;
+}
+.gap {
+  gap: 78px;
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
+}
+
+.marquee {
+  width: 100%;
+  --gap: 78px;
+  @media (max-width: 768px) {
+    --gap: 30px;
+  }
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 78px;
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
+}

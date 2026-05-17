@@ -1,0 +1,65 @@
+.container {
+  padding: 16px;
+  background: $white-50;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+}
+
+.marginBottom {
+  @media (min-width: 680px) and (max-width: 1200px) {
+    margin-bottom: 16px;
+  }
+}
+.title {
+  margin: 0 0 12px;
+  color: $title-dark;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editButton {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.text {
+  color: $white-800;
+  white-space: pre-wrap;
+}
+
+.editWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+  background: $white-50;
+  color: $gray-900;
+  resize: none;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 1200px) {
+  .text {
+    font-size: 14px;
+  }
+}

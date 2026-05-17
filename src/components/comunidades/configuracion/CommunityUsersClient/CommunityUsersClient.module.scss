@@ -1,0 +1,426 @@
+.container {
+  padding: 24px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: Epilogue;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 37px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    display: none;
+  }
+}
+
+.separator {
+  height: 4px;
+  background: $blue-600;
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.filtersRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-end;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.select {
+  min-width: 180px;
+  max-width: 240px;
+  width: 100%;
+  background-color: #eeeeee;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  background-color: #eeeeee !important;
+  color: #333 !important;
+
+  &:focus {
+    background-color: #eeeeee !important;
+  }
+
+  @media (max-width: 1200px) {
+    background-color: #ffffff !important;
+    max-width: 100%;
+  }
+}
+
+.searchInputInput {
+  background-color: #eeeeee !important;
+
+  &:focus,
+  &--focused {
+    background-color: #eeeeee !important;
+  }
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  padding: 16px 0;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 16px;
+  color: $gray-600;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid $blue-600;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Table column widths and truncation
+.tableWrapper {
+  overflow-x: auto;
+  width: 100%;
+  display: block;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+
+  :global {
+    table {
+      width: max-content;
+      /* let table size to content so wrapper can scroll */
+      min-width: 1590px;
+
+      /* adjust based on columns */
+      // Column widths - responsive percentages
+      thead th:nth-child(1),
+      tbody td:nth-child(1) {
+        width: 6%; // ID
+        min-width: 60px;
+      }
+
+      thead th:nth-child(2),
+      tbody td:nth-child(2) {
+        width: auto; // NOMBRE Y APELLIDO - ajusta al contenido
+        min-width: 180px;
+        padding-left: 12px;
+      }
+
+      thead th:nth-child(3),
+      tbody td:nth-child(3) {
+        width: 12%; // TIPO DE CUENTA
+        min-width: 120px;
+      }
+
+      thead th:nth-child(4),
+      tbody td:nth-child(4) {
+        width: 6%; // CORREO
+      }
+
+      thead th:nth-child(5),
+      tbody td:nth-child(5) {
+        width: 11%; // CONTACTO
+        min-width: 110px;
+      }
+
+      thead th:nth-child(6),
+      tbody td:nth-child(6) {
+        width: 12%; // RUBRO/INDUSTRIA
+        min-width: 120px;
+      }
+
+      thead th:nth-child(7),
+      tbody td:nth-child(7) {
+        width: 12%; // EMPRESA
+        min-width: 120px;
+      }
+
+      thead th:nth-child(8),
+      tbody td:nth-child(8) {
+        width: 6%; // ACCIONES
+      }
+
+      thead th:nth-child(9),
+      tbody td:nth-child(9) {
+        width: 11%; // ACCIONES
+        min-width: 100px;
+      }
+
+
+      // Truncate all cells
+      tbody td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        // Ensure spans and other inline elements also truncate
+        >span {
+          display: inline-block;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      // Actions column should not truncate
+      tbody td:nth-child(8) {
+        overflow: visible;
+        white-space: normal;
+      }
+    }
+  }
+}
+
+// Table cell styles
+.id {
+  color: $blue-700;
+  font-weight: 500;
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  justify-content: start;
+}
+
+.nameWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  overflow: hidden;
+
+  .nameLink {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: start;
+    max-width: 100%;
+  }
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nameLink {
+  color: $black-300;
+  text-decoration: underline;
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.starIcon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: #0288c2;
+}
+
+.email {
+  color: $black-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.contact {
+  color: $black-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.sector {
+  color: $black-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.company {
+  color: $black-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.actionIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $black-300;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+  min-width: 28px;
+  min-height: 28px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+}
+
+.mobileList {
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+}
+
+.mobileLoadMore {
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+}
+
+.mobileSearchInput {
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: none;
+
+    :global(.inputWrapper) {
+      width: 100% !important;
+      max-width: none !important;
+      flex: 1;
+      display: flex;
+    }
+
+    :global(.inputContainer) {
+      width: 100% !important;
+      max-width: none !important;
+      flex: 1;
+    }
+
+    :global(.inputRow) {
+      width: 100% !important;
+      max-width: none !important;
+      display: flex;
+    }
+
+    :global(.input) {
+      max-height: 40px;
+      height: 40px;
+      width: 100% !important;
+      flex: 1;
+      background-color: #ffffff !important;
+      box-sizing: border-box !important;
+
+      &:focus {
+        background-color: #ffffff !important;
+      }
+    }
+  }
+}
+
+.isBlocked {
+  background-color: #ff383c;
+  color: $blue-50;
+  border-radius: 5px;
+}

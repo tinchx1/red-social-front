@@ -1,0 +1,441 @@
+.formContainer {
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 48px;
+  width: auto;
+  min-width: 748px;
+  max-width: 1189px;
+  min-height: 700px;
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 769px) {
+  .formContainer {
+    height: auto;
+  }
+
+  .form {
+    padding-bottom: 96px;
+  }
+
+  .buttonContainer {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 0;
+    justify-content: center;
+  }
+
+  .desktopControls {
+    justify-content: center;
+  }
+}
+
+.title {
+  font-family: $font-epilogue;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1f2937;
+  text-align: center;
+  margin: 0 0 24px 0;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-family: $font-roboto;
+  font-size: 18px;
+  color: $gray-light;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+}
+
+.formField {
+  margin-bottom: 32px;
+}
+
+.formFieldsContainer {
+  display: flex;
+}
+
+.desktopLayout {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.leftColumn,
+.rightColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftColumn .formField,
+.rightColumn .formField {
+  margin-bottom: 24px;
+}
+
+.mobileLayout {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.desktopControls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 32px;
+}
+
+.mobileControls {
+  display: none;
+  gap: 12px;
+  width: 100%;
+}
+
+.mobileControls button {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    min-width: auto;
+    max-width: auto;
+    min-height: 571px;
+    padding: 32px 24px;
+    margin: 20px auto;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .formFieldsContainer {
+    flex-direction: column;
+  }
+
+  .desktopLayout {
+    display: none;
+  }
+
+  .mobileLayout {
+    display: flex;
+  }
+
+  .leftColumn .formField,
+  .rightColumn .formField {
+    margin-bottom: 20px;
+  }
+
+  .desktopControls {
+    display: none;
+  }
+
+  .mobileControls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttonContainer {
+    justify-content: center;
+  }
+
+
+}
+
+.label {
+  display: block;
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.logoUpload {
+  position: relative;
+  width: 100%;
+}
+
+.fileInput {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.fileLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 16px;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  cursor: pointer;
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: #6b7280;
+  min-height: 120px;
+  justify-content: center;
+  width: 100%;
+}
+
+.uploadIcon {
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  width: 100%;
+}
+
+.fileName {
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sectorsLabel {
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 400;
+  color: $black-100;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+    .leftColumn,
+      .rightColumn {
+        gap: 8px;
+      }
+
+  .sectorsLabel {
+    font-size: 15px;
+  }
+}
+
+// Textarea styles
+.textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: #374151;
+  background-color: $gray-medium;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  &::placeholder {
+    color: rgba(156, 163, 175, 0.6);
+  }
+}
+
+.fieldInfo {
+  font-family: $font-roboto;
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+// Checkbox styles
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+
+  span {
+    flex: 1;
+  }
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.checkboxText {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.checkboxError {
+  display: block;
+  color: #dc2626;
+  font-size: 12px;
+  font-family: $font-roboto;
+  margin-top: 4px;
+  margin-left: 30px;
+}
+
+.link {
+  color: $blue-500;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $blue-600;
+  }
+}
+
+.desktopOnly {
+  display: block;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .formFieldsContainer {
+    gap: 32px;
+  }
+}
+
+// General error message styles
+.generalError {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  
+  p {
+    color: #dc2626;
+    font-family: $font-roboto;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// General success message styles (mirrors RecoverPasswordForm)
+.generalSuccess {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+
+  p {
+    color: #047857;
+    font-family: $font-roboto;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// Google info message styles
+.googleInfo {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+
+  p {
+    color: #1d4ed8;
+    font-family: $font-roboto;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+.requirementsRow {
+  width: 100%;
+  margin-top: 8px;
+}
+
+// Visibility helpers
+.desktopOnly {
+  display: none;
+}
+
+.mobileOnly {
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .desktopOnly {
+    display: block;
+  }
+  .mobileOnly {
+    display: none;
+  }
+    .progressIndicatorMobile {
+      display: none;
+    }
+}

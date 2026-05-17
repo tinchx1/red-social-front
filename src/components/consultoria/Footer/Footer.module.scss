@@ -1,0 +1,141 @@
+.footer {
+  background: $dark-blue;
+  color: $white-50;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    display: none;
+  }
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: start;
+  gap: 48px;
+  padding: 48px 80px;
+  height: 227px;
+  align-items: center;
+}
+
+.brandBlock {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.apiaSymbol {
+  width: 205px;
+  height: auto;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-family: $font-roboto;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 16px;
+}
+
+.sectionTitle {
+  color: $blue-500;
+  font-family: $font-roboto;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  margin: 0 0 12px;
+}
+
+.contactBlock {
+  justify-self: end;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: $white-transparent;
+}
+
+.contactList p {
+  font-family: $font-roboto;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.socialBlock {
+  justify-self: end;
+}
+
+.socialList {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.socialIcon {
+  width: 44px;
+  height: 44px;
+  border: 2px solid $blue-500;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $white-50;
+}
+
+.bottomRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 16px 80px;
+  background: $title-dark;
+  height: 90px;
+  color: $white-transparent;
+}
+
+.copyright {
+  justify-self: start;
+  padding-right: 16px;
+}
+
+.developed {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.delsudLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: $white-50;
+}
+
+.delsudSymbol {
+  width: 28px;
+  height: auto;
+}
+
+.delsudText {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.copyrightText {
+    font-family: $font-roboto;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -1,0 +1,215 @@
+
+.infoContainer {
+  background: $white-50;
+  border: 1px solid $white-400;
+  border-radius: 8px;
+  overflow: hidden; // keep media header flush with container (no separation)
+  margin-bottom: 16px;
+  position: relative;
+
+  &.isEditing {
+    border-color: $blue-500;
+    box-shadow: 0 0 0 1px $blue-500;
+  }
+}
+
+.content {
+  position: relative;
+  margin-top: 36px;
+  padding: 16px; // move padding from container so media header sits flush
+  @media (max-width: 768px) {
+    margin-top: 16px;
+  }
+}
+
+.actionButtons {
+  position: absolute;
+  top: -26px; // align within padded content
+  right: 16px;
+  z-index: 10;
+}
+
+.editIcon {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.editButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cancelIcon {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.header {
+  margin-bottom: 16px;
+  padding-right: 40px; // Space for action buttons
+
+  h1 {
+    color: $title-dark;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.2;
+    white-space: pre-wrap; // allow manual line breaks and wrapping
+    overflow-wrap: anywhere; // break long words/URLs if needed
+  }
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: $white-900;
+}
+
+.contactLabel {
+  font-weight: 500;
+  flex: 0 0 130px;
+  min-width: 130px;
+  align-self: center;
+  font-size: 12px;
+  color: $white-700;
+  letter-spacing: 0.5px;
+}
+
+.inputGroup {
+  flex: 1;
+  position: relative;
+}
+
+.contactInput {
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: $blue-600;
+  outline: none;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  transition: border-color 0.2s;
+  &:focus {
+    border-color: $blue-500;
+  }
+
+  &.inputError {
+    border-color: #ff0000 !important;
+  }
+}
+
+.errorText {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.charCounter {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: $white-700;
+}
+
+.counterWarning {
+  color: #dc2626;
+}
+
+// Name input alignment like InformacionPerfil
+.nameInputs {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.nameInput {
+  background: $white-50;
+  border: 1px solid $white-300;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: $title-dark;
+  outline: none;
+  transition: border-color 0.2s;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+
+  &:focus { border-color: $blue-500; }
+  &::placeholder { color: $white-600; }
+}
+
+.contactRowAround {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+// Responsive adjustments
+@media (max-width: 768px) {
+  .contactRow { gap: 12px; align-items: flex-start; }
+  .contactLabel { flex: 0 0 auto; min-width: auto; font-size: 13px; }
+
+  .header {
+    padding-right: 0;
+    margin-bottom: 12px;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .actionButtons {
+    position: static;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactRow { gap: 8px; font-size: 12px; }
+  .contactLabel { font-size: 12px; }
+  .nameInput { font-size: 16px; padding: 6px 10px; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .contactRow {
+    .contactLabel {
+      flex: 0 0 110px;
+      min-width: 110px;
+    }
+    > span:not(.contactLabel),
+    > a,
+    > div {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+}

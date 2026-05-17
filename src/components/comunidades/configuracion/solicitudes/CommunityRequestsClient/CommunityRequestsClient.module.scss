@@ -1,0 +1,532 @@
+.container {
+  padding: 24px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: Epilogue;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 37px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+@media (max-width: 1200px) {
+  .title {
+    display: none;
+  }
+}
+.filtersRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-end;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.select {
+  min-width: 170px;
+  max-width: 220px;
+  width: 100%;
+  background-color: $white-300;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.searchInputInput {
+  background-color: $white-300 !important;
+
+  &:focus,
+  &--focused {
+    background-color: $white-300 !important;
+  }
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  padding: 16px 0;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 16px;
+  color: $gray-600;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid $white-500;
+  border-top: 3px solid $blue-600;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.id {
+  color: $blue-700;
+  font-weight: 500;
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+  max-width: 240px;
+  margin: 0 auto;
+  justify-content: start;
+  .nameLink {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: start;
+  }
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nameLinkContainer {
+  position: relative;
+}
+
+.nameLink {
+  color: $black-300;
+  text-decoration: underline;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.warningIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 12px;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.email {
+  color: $black-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.contact {
+  color: $black-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.sector {
+  color: $black-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.company {
+  color: $black-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: $white-400;
+  color: $gray-700;
+  min-width: 108px;
+}
+
+.pending {
+  background-color: $white-400;
+  color: $gray-700;
+}
+
+.approved {
+  background-color: rgba($blue-600, 0.1);
+  color: $black-300;
+}
+
+.rejected {
+  background-color: rgba($red-500, 0.12);
+  color: $black-300;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.actionIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $black-300;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.accept {
+  color: $black-300;
+  height: 32px;
+  width: 32px;
+  svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+}
+
+.reject {
+  color: $black-300;
+  height: 32px;
+  width: 32px;
+  svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+}
+
+// Table column widths and truncation
+.tableWrapper {
+  display: block;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+
+  :global {
+    table {
+      table-layout: fixed;
+      width: 100%;
+
+      // Column widths - responsive percentages
+      thead th:nth-child(1),
+      tbody td:nth-child(1) {
+        width: 8%; // ID
+        min-width: 80px;
+        max-width: 120px;
+      }
+
+      thead th:nth-child(2),
+      tbody td:nth-child(2) {
+        width: 18%; // NOMBRE Y APELLIDO
+        min-width: 130px;
+        max-width: 200px;
+        padding-left: 12px;
+      }
+      thead th:nth-child(2) {
+        text-align: start;
+        padding-left: 42px;
+      }
+      thead th:nth-child(3),
+      tbody td:nth-child(3) {
+        width: 12%; // TIPO DE CUENTA
+        min-width: 120px;
+      }
+
+      thead th:nth-child(4),
+      tbody td:nth-child(4) {
+        width: 16%; // CORREO
+        min-width: 150px;
+      }
+
+      thead th:nth-child(5),
+      tbody td:nth-child(5) {
+        width: 11%; // CONTACTO
+        min-width: 110px;
+      }
+
+      thead th:nth-child(6),
+      tbody td:nth-child(6) {
+        width: 12%; // RUBRO/INDUSTRIA
+        min-width: 120px;
+      }
+
+      thead th:nth-child(7),
+      tbody td:nth-child(7) {
+        width: 12%; // EMPRESA
+        min-width: 120px;
+      }
+
+      thead th:nth-child(8),
+      tbody td:nth-child(8) {
+        width: 11%; // ACCIONES
+        min-width: 100px;
+      }
+
+      @media (max-width: 1600px) {
+        thead th:nth-child(1),
+        tbody td:nth-child(1) {
+          width: 7%;
+          min-width: 70px;
+          max-width: 100px;
+        }
+
+        thead th:nth-child(2),
+        tbody td:nth-child(2) {
+          width: 16%;
+          min-width: 120px;
+          max-width: 180px;
+        }
+
+        thead th:nth-child(3),
+        tbody td:nth-child(3) {
+          width: 10%;
+          min-width: 100px;
+        }
+
+        thead th:nth-child(4),
+        tbody td:nth-child(4) {
+          width: 14%;
+          min-width: 130px;
+        }
+
+        thead th:nth-child(5),
+        tbody td:nth-child(5) {
+          width: 10%;
+          min-width: 100px;
+        }
+
+        thead th:nth-child(6),
+        tbody td:nth-child(6) {
+          width: 11%;
+          min-width: 110px;
+        }
+
+        thead th:nth-child(7),
+        tbody td:nth-child(7) {
+          width: 11%;
+          min-width: 110px;
+        }
+
+        thead th:nth-child(8),
+        tbody td:nth-child(8) {
+          width: 10%;
+          min-width: 90px;
+        }
+      }
+
+      @media (max-width: 1400px) {
+        thead th:nth-child(1),
+        tbody td:nth-child(1) {
+          width: 6%;
+          min-width: 60px;
+          max-width: 90px;
+        }
+
+        thead th:nth-child(2),
+        tbody td:nth-child(2) {
+          width: 15%;
+          min-width: 110px;
+          max-width: 160px;
+        }
+
+        thead th:nth-child(3),
+        tbody td:nth-child(3) {
+          width: 9%;
+          min-width: 90px;
+        }
+
+        thead th:nth-child(4),
+        tbody td:nth-child(4) {
+          width: 13%;
+          min-width: 120px;
+        }
+
+        thead th:nth-child(5),
+        tbody td:nth-child(5) {
+          width: 9%;
+          min-width: 90px;
+        }
+
+        thead th:nth-child(6),
+        tbody td:nth-child(6) {
+          width: 10%;
+          min-width: 100px;
+        }
+
+        thead th:nth-child(7),
+        tbody td:nth-child(7) {
+          width: 10%;
+          min-width: 100px;
+        }
+
+        thead th:nth-child(8),
+        tbody td:nth-child(8) {
+          width: 9%;
+          min-width: 80px;
+        }
+      }
+
+      // Truncate all cells
+      tbody td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        // Ensure spans and other inline elements also truncate
+        > span {
+          display: inline-block;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      // ID column should not truncate but stay on one line
+      tbody td:nth-child(1) {
+        overflow: visible;
+        white-space: nowrap;
+
+        > span {
+          overflow: visible;
+          white-space: nowrap;
+          text-overflow: clip;
+        }
+      }
+
+      // Actions column should not truncate
+      tbody td:nth-child(8) {
+        overflow: visible;
+        white-space: normal;
+      }
+    }
+  }
+}
+
+.mobileList {
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.containerCards {
+  background-color: $white-50;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 25px;
+  border-radius: 12px !important;
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
+}
+
+.containerTitle {
+  font-size: 22px;
+  padding-left: 24px;
+  margin-bottom: 0;
+}
+
+.mobileLoadMore {
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+}

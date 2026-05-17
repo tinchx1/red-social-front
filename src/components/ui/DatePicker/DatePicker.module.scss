@@ -1,0 +1,168 @@
+.container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.inlineContainer {
+  display: inline-block;
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 40;
+  padding: 12px;
+  border-radius: 16px;
+  background-color: $white-50;
+  box-shadow: 0 18px 36px rgba($black, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar {
+  :global {
+    // Navigation buttons styling
+    .rdp-button_previous,
+    .rdp-button_next {
+      width: 30px !important;
+      height: 30px !important;
+      color: #101f2a !important;
+      border-radius: 50% !important;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1) !important;
+      border: none !important;
+
+      &:hover:not(:disabled) {
+        opacity: 0.9;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $blue-200;
+        outline-offset: 2px;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      svg {
+        fill: #101f2a !important;
+        width: 14px !important;
+        height: 14px !important;
+      }
+    }
+    // Title (caption) styling
+    .rdp-caption_label {
+      color: $blue-500 !important;
+      font-family: $font-roboto;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .rdp-today {
+      button {
+        color: $black-100 !important;
+      }
+    }
+
+    // Hide weekday headers
+    .rdp-weekday {
+      font-weight: 600;
+    }
+
+    .rdp-day {
+      button {
+        justify-self: center;
+      }
+    }
+
+    .rdp-selected {
+      button {
+        color: $white-50 !important;
+        background-color: $blue-500 !important;
+        border: none !important;
+        font-family: Roboto;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 13px;
+        line-height: 120%;
+        letter-spacing: 0%;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+    // Selected date styling
+    .rdp-day_selected {
+      background-color: $blue-500 !important;
+      color: $white-50 !important;
+
+      &:hover {
+        background-color: $blue-400 !important;
+      }
+    }
+    .rdp-range_middle {
+      background-color: $blue-50 !important;
+      color: $black-100 !important;
+      button {
+        background-color: $blue-50 !important;
+        color: $black-100 !important;
+      }
+    }
+    .rdp-range_start {
+      color: $black-100 !important;
+      background-color: $white-50 !important;
+    }
+    .rdp-range_end {
+      color: $black-100 !important;
+      background-color: $white-50 !important;
+    }
+  }
+}
+
+.resetContainer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.errorMessage {
+  color: $red-500;
+  font-family: $font-roboto;
+  font-size: 12px;
+  font-weight: 400;
+  flex: 1;
+  text-align: right;
+}
+
+.resetButton {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: $black-200;
+  text-decoration: underline;
+  font-family: $font-roboto;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $white-200;
+    border-color: $white-500;
+  }
+
+  &:active {
+    background: $white-300;
+  }
+}
+
+@media (max-width: 768px) {
+  .popover {
+    padding: 10px;
+  }
+}

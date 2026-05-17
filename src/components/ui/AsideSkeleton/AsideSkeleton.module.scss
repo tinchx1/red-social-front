@@ -1,0 +1,136 @@
+.container {
+  width: 100%;
+}
+
+.defaultAside {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+// Red aside skeleton
+.redAside {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.redAsideHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #f0f0f0;
+  margin-bottom: 1rem;
+  padding-bottom: 12px;
+}
+
+.redAsideTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.redAsideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.redAsideNavItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+// Communities aside skeleton
+.communitiesAside {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 4px 0;
+  padding: 24px;
+}
+
+.communitiesAsideHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #f0f0f0;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 1rem;
+}
+
+.communitiesAsideTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.communitiesAsideNav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.communitiesAsideNavItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+// AboutCommunity skeleton
+.aboutCommunitySkeleton {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  height: 200px;
+}
+
+.skeletonContent {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+  .redAside {
+    display: none;
+  }
+  
+  .communitiesAside {
+    display: none;
+  }
+}

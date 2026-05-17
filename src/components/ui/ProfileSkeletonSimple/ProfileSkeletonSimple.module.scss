@@ -1,0 +1,338 @@
+.skeletonContainer {
+  display: grid;
+  grid-template-columns: 120px 1fr 300px;
+  gap: 24px;
+  max-width: 1200px;
+  padding: 24px;
+  margin: 0 auto;
+  padding-top: 25px;
+  margin-bottom: 25px;
+  font-family: $font-roboto;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 110px);
+
+  @media (max-width: 955px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  @media (max-width: 640px) {
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+.asideMobile {
+  display: block;
+
+  @media (max-width: 955px) {
+    display: none;
+  }
+}
+
+.perfilMain {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infoContainer {
+  background: $white-50;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.content {
+  padding: 62px 40px;
+
+  @media (max-width: 768px) {
+    padding: 58px 24px;
+    padding-top: 0px !important;
+  }
+
+  @media (max-width: 480px) {
+    padding: 54px 20px;
+  }
+}
+
+// Media Header Skeleton
+.coverImage {
+  position: relative;
+  height: clamp(120px, 22vw, 220px);
+  width: 100%;
+  overflow: visible;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.bannerSkeleton {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.avatarContainer {
+  position: absolute;
+  bottom: -40px;
+  left: 40px;
+  background: $white-50;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  height: 120px;
+
+  @media (max-width: 768px) {
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    bottom: -30px;
+  }
+
+  @media (max-width: 480px) {
+    left: 16px;
+    width: 80px;
+    height: 80px;
+    bottom: -25px;
+  }
+}
+
+.avatarSkeleton {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+// Content Skeleton
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 40px;
+    gap: 8px;
+  }
+}
+
+.nameSkeleton {
+  height: 28px;
+  width: 200px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+
+  @media (max-width: 768px) {
+    height: 24px;
+    width: 180px;
+  }
+
+  @media (max-width: 480px) {
+    height: 20px;
+    width: 160px;
+  }
+}
+
+.contactInfo {
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 10px;
+  }
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+}
+
+.contactLabelSkeleton {
+  height: 14px;
+  width: 80px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+  flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    width: 70px;
+  }
+}
+
+.contactValueSkeleton {
+  height: 14px;
+  width: 150px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+  flex: 1;
+
+  @media (max-width: 480px) {
+    width: 120px;
+  }
+}
+
+// Section Headers
+.sectionHeader {
+  margin-bottom: 20px;
+}
+
+.sectionTitleSkeleton {
+  height: 20px;
+  width: 120px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+// Summary Skeleton
+.summarySkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryLine {
+  height: 16px;
+  width: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.summaryLineShort {
+  height: 16px;
+  width: 60%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+// Posts Skeleton
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.postCard {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.postImageSkeleton {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.postContent {
+  padding: 16px;
+}
+
+.postTitleSkeleton {
+  height: 18px;
+  width: 80%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+.postTextSkeleton {
+  height: 14px;
+  width: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+  margin-bottom: 6px;
+
+  &:last-child {
+    width: 70%;
+  }
+}
+
+// Back Button Skeleton
+.backButtonSkeleton {
+  height: 40px;
+  width: 100px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+// Shimmer Animation
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .content {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 26px 20px;
+    padding-top: 26px !important;
+  }
+
+  .postsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

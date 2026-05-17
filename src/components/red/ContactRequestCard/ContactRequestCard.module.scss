@@ -1,0 +1,363 @@
+.requestCard {
+  background: $white-50;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid $white-200;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-color: $white-300;
+  }
+}
+
+/* Row wrapper to place actions outside on desktop */
+.cardRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  gap: 12px;
+}
+
+/* Desktop Layout */
+.desktopLayout {
+  display: none;
+  
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.bannerContainer {
+  position: relative;
+  height: 70px;
+  overflow: visible;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.defaultBanner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, $blue-500, $blue-300);
+}
+
+.profilePictureContainer {
+  position: absolute;
+  bottom: -20px;
+  left: 22%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background: $white-50;
+  padding: 4px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba($black-100, 0.15);
+  width: 58px;
+  height:58px;
+}
+
+.profilePicture {
+  border-radius: 50%;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.defaultProfilePicture {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $blue-500, $blue-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white-50;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.desktopContent {
+  padding: 20px 16px 16px;
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+/* Desktop: name below banner, role to the right of name */
+@media (min-width: 768px) {
+  .desktopContent .contactInfo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
+    padding-left: 36px;
+    padding-top: 10px;
+  }
+
+  .desktopContent .name {
+    margin: 0;
+  }
+
+  .desktopContent .role {
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+
+.desktopActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Outside actions (right side on desktop) */
+.desktopActionsOutside {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-self: center;
+  }
+}
+
+.desktopActions .acceptButton,
+.desktopActions .rejectButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  font-weight: 600;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Share same size/behavior for outside buttons */
+.desktopActionsOutside .acceptButton,
+.desktopActionsOutside .rejectButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.desktopActions .acceptButton {
+  background: $blue-500;
+  color: $white-50;
+  
+  &:hover {
+    background: $blue-600;
+  }
+}
+
+.desktopActions .rejectButton {
+  background: $white-200;
+  color: $gray-600;
+  
+  &:hover {
+    background: $white-300;
+    color: $gray-700;
+  }
+}
+
+.desktopActionsOutside .acceptButton {
+  background: $blue-500;
+  color: $white-50;
+
+  &:hover {
+    background: $blue-600;
+  }
+}
+
+.desktopActionsOutside .rejectButton {
+  background: $white-200;
+  color: $gray-600;
+
+  &:hover {
+    background: $white-300;
+    color: $gray-700;
+  }
+}
+
+/* Mobile Layout */
+.mobileLayout {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+/* Profile Section */
+.profileSection {
+  flex-shrink: 0;
+}
+
+.mobileLayout .profilePicture {
+  border-radius: 50%;
+  width: 46px !important;
+  height: 46px !important;
+  object-fit: cover;
+}
+
+.mobileLayout .defaultProfilePicture {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $blue-500, $blue-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white-50;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* Contact Info */
+.contactInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: $title-dark;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 14px;
+  color: $gray-600;
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.requestText {
+  font-size: 14px;
+  color: $blue-900;
+  margin: 0;
+  font-weight: 400;
+}
+
+.nameRequestText {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.contactInfoContainer {
+  width: 100%;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding-top: 12px;
+  flex-shrink: 0;
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.acceptButton,
+.rejectButton {
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mobileLayout {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .profileSection {
+    align-self: flex-start;
+  }
+
+  .mobileLayout .profilePicture {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .mobileLayout .defaultProfilePicture {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .role {
+    font-size: 13px;
+  }
+
+  .requestText {
+    display: none;
+  }
+
+  .acceptButton,
+  .rejectButton {
+    min-width: 70px;
+    height: 32px;
+    font-size: 13px;
+  }
+}

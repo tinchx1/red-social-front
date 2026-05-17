@@ -1,0 +1,386 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  padding: 20px;
+}
+
+.modal {
+  background: $white-50;
+  border-radius: 16px;
+  width: min(1040px, 90vw);
+  max-width: 800px;
+  height: calc(95dvh);
+  max-height: 880px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100000;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: $title-dark !important;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  line-height: 1;
+
+  &:hover {
+    background: $white-200;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 16px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 40px;
+}
+
+.title {
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: 24px;
+  font-weight: 600;
+  color: $blue-500;
+}
+
+.description {
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stepGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.stepColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 500;
+  color: $black-200;
+}
+
+.formatGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.formatOption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  border: 1px solid $white-400;
+  border-radius: 12px;
+  padding: 16px;
+  background: $white-100;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.formatOption:hover {
+  border-color: $blue-300;
+  box-shadow: 0 0 0 2px rgba($blue-500, 0.08);
+}
+
+.formatOptionActive {
+  border-color: $blue-500;
+  background: $blue-50;
+  box-shadow: 0 0 0 2px rgba($blue-500, 0.16);
+}
+
+.formatLabel {
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 600;
+  color: $black-100;
+}
+
+.formatPrice {
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 500;
+  color: $blue-500;
+}
+
+.preview {
+  display: inline-flex;
+  position: relative;
+  border: 1px solid $white-400;
+  border-radius: 12px;
+  overflow: hidden;
+  background: $white-100;
+  max-width: 360px;
+}
+
+.previewImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.removeButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.2s ease;
+  z-index: 1;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.error {
+  margin: -12px 0 0 0;
+  font-family: $font-roboto;
+  font-size: 14px;
+  color: $red;
+}
+
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 250px;
+}
+
+.previewContainerPosition4 {
+  min-height: auto;
+}
+
+.previewPosition3 {
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.previewPosition4 {
+  width: 100%;
+}
+
+.previewPanel {
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+
+  // Reducir tamaños de posts en desktop
+  :global {
+    [class*="feed"] {
+      padding: 12px;
+      gap: 12px;
+    }
+
+    [class*="postSmall"],
+    [class*="postBig"] {
+      padding: 8px;
+      gap: 6px;
+    }
+
+    [class*="postHeader"] {
+      gap: 8px;
+    }
+
+    [class*="postMeta"] {
+      gap: 3px;
+    }
+
+    // Reducir tamaños de skeletons
+    [class*="staticSkeleton"] {
+      transform: scale(0.85);
+      transform-origin: left top;
+    }
+
+    [class*="postSmall"] [class*="staticSkeleton"] {
+      margin-bottom: -2px;
+    }
+
+    [class*="postBig"] [class*="staticSkeleton"] {
+      margin-bottom: -2px;
+    }
+  }
+}
+
+.previewTabs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.previewTab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background: $blue-50;
+  color: $title-dark;
+  font-weight: 600;
+  text-wrap: nowrap;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+  border: none;
+  font-family: $font-roboto;
+
+  &:hover {
+    background: $blue-100;
+  }
+}
+
+.previewTabActive {
+  background: $blue-500;
+  color: $white-50;
+
+  &:hover {
+    background: $blue-600;
+  }
+}
+
+.previewContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  // Para mobile preview, limitar ancho como antes
+  :global {
+    [class*="container"]:has([class*="feed"]) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.mobilePreviewWrapper {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 960px) {
+  .mobilePreviewWrapper {
+    transform-origin: top center;
+  }
+
+  .mobilePreviewScaleLight {
+    transform: scale(0.95);
+  }
+
+  .mobilePreviewScaleMedium {
+    transform: scale(0.95);
+  }
+
+  .mobilePreviewScaleStrong {
+    transform: scale(0.65);
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.progressWrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 960px) {
+  .stepGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .previewPanel {
+    padding: 12px;
+  }
+
+  .previewTab {
+    padding: 10px;
+    font-size: 12px;
+  }
+}

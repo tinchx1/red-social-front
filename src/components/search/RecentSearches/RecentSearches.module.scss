@@ -1,0 +1,65 @@
+.searchHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.searchItem {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  color: $dark-blue;
+  font-weight: 600;
+  &:hover {
+    opacity: 0.8;
+    border-radius: 4px;
+  }
+
+  .searchText {
+    flex: 1;
+    color: $dark-blue;
+    font-size: 14px;
+    font-family: $font-roboto;
+    font-weight: 600;
+  }
+}
+
+.isEmpty {
+  cursor: default;
+  pointer-events: none;
+}
+
+.historyIcon {
+  width: 20px;
+  height: 20px;
+  color: $dark-blue;
+  flex-shrink: 0;
+  margin-right: 12px;
+  display: block;
+}
+
+.searchText {
+  font-weight: 600;
+  font-size: 14px;
+  font-family: $font-roboto;
+  color: $dark-blue;
+}
+
+.closeIcon {
+  color: $white-600;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  background-color: inherit;
+  border: none;
+}

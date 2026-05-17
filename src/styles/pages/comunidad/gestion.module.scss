@@ -1,0 +1,30 @@
+@import "@/styles/pages/comunidad/invitacion.module.scss";
+
+.container {
+  @extend .container;
+}
+
+.desktopView {
+  @extend .desktopView;
+}
+
+.containerCards {
+  @extend .containerCards;
+}
+
+.containerDivCards {
+  @extend .containerDivCards;
+}
+
+.title {
+  @extend .title;
+}
+
+.mobileView {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
